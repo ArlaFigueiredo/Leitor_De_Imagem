@@ -1,1 +1,1 @@
-# POO_Project
+# Leitor_de_Imagem
