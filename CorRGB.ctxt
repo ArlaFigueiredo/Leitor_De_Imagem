@@ -14,4 +14,6 @@ comment6.params=blue
 comment6.target=void\ setBlue(int)
 comment7.params=
 comment7.target=double\ getLuminosidade()
-numComments=8
+comment8.params=
+comment8.target=java.lang.String\ getCorHexadecimal()
+numComments=9
