@@ -30,9 +30,9 @@ public class CorRGB
     }
 
     public double getLuminosidade(){
-        this.luminosidade = Math.ceil(( this.red * 0.3 +
-                this.green * 0.59 + 
-                this.blue * 0.11   )/255);
+        this.luminosidade = Math.ceil(( this.getRed() * 0.3 +
+                this.getGreen() * 0.59 + 
+                this.getBlue() * 0.11   )/255);
         return luminosidade;
     }
 
