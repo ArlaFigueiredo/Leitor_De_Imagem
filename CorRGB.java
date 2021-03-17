@@ -17,15 +17,15 @@
         return this.blue;
     }
 
-    public void setRed(int red){
+    private void setRed(int red){
         this.red = red;
     }    
     
-    public void setGreen(int green){
+    private void setGreen(int green){
         this.green = green;
     }
     
-    public void setBlue(int blue){
+    private void setBlue(int blue){
         this.blue = blue;
     }
     
