@@ -1,6 +1,6 @@
 # Leitor_de_Imagem
 
---> Versão 1.0
+--> Versão 2.0
 
 # Classe CorRGB
 
