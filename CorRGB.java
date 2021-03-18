@@ -5,6 +5,20 @@ public class CorRGB
     private int blue;
     private double luminosidade;
 
+    public CorRGB (CorRGB no){
+        this(no.getRed(), no.getGreen(), no.getBlue());    
+    }
+    
+    public CorRGB(){
+        this(0,0,0);
+    }
+    
+    public CorRGB (int red, int green, int blue){
+        this.setRed(red);
+        this.setGreen(green);
+        this.setBlue(blue);
+    }
+    
     public int getRed(){
         return this.red;
     }    
@@ -18,15 +32,15 @@ public class CorRGB
     }
 
     private void setRed(int red){
-        this.red = red;
+        this.red = verificaRGB(red);
     }    
 
     private void setGreen(int green){
-        this.green = green;
+        this.green = verificaRGB(green);
     }
 
     private void setBlue(int blue){
-        this.blue = blue;
+        this.blue = verificaRGB(blue);
     }
 
     public double getLuminosidade(){
@@ -40,7 +54,20 @@ public class CorRGB
         return ("#" + Integer.toHexString(this.getRed()) + Integer.toHexString(this.getGreen()) + Integer.toHexString(this.getBlue())).toUpperCase();
     }
     
-    //public CorRGB geraCopia(){
-        //return new CorRGB(this.getRed(), this.getGreen(), this.getBlue());
-    //}
+    public CorRGB geraCopia(){
+        return new CorRGB(this.getRed(), this.getGreen(), this.getBlue());
+    }
+    
+    private int verificaRGB (int num){
+        if (num>255)
+            num = 255;
+        if (num<0)
+            num = 0;
+        return num;
+    }
+    
+    public boolean equals(CorRGB no){
+        return ((this.getRed() == no.getRed()) && (this.getGreen() == no.getGreen()) && (this.getBlue() == no.getBlue()));
+    }
+    
 }
