@@ -3,7 +3,6 @@ public class CorRGB
     private int red;
     private int green;
     private int blue;
-    private double luminosidade;
 
     public CorRGB (CorRGB no){
         this(no.getRed(), no.getGreen(), no.getBlue());    
@@ -44,10 +43,9 @@ public class CorRGB
     }
 
     public double getLuminosidade(){
-        this.luminosidade = Math.ceil(( this.getRed() * 0.3 +
+        return  Math.ceil(this.getRed() * 0.3 +
                 this.getGreen() * 0.59 + 
-                this.getBlue() * 0.11   )/255);
-        return luminosidade;
+                this.getBlue() * 0.11);
     }
 
     public String getCorHexadecimal(){
@@ -65,6 +63,30 @@ public class CorRGB
             num = 0;
         return num;
     }
+    
+    public void clarear(double percentual){
+        if(percentual >=1)
+            percentual = percentual / 100;
+            
+        this.setRed(this.getRed() + (int)(Math.round(this.getRed()*percentual)));
+        
+        this.setGreen(this.getGreen() + (int)(Math.round(this.getGreen()*percentual)));
+        
+        this.setBlue(this.getBlue() +(int) (Math.round(this.getBlue()*percentual)));
+    }
+    
+    public void escurecer(double percentual){
+        if(percentual >=1)
+            percentual = percentual / 100;
+        
+        this.setRed(this.getRed() - (int) (Math.round(this.getRed()*percentual)));
+        
+        this.setGreen(this.getGreen() - (int)(Math.round(this.getGreen()*percentual)));
+        
+        this.setBlue(this.getBlue() - (int) (Math.round(this.getBlue()*percentual)));
+    }
+    
+    
     
     public boolean equals(CorRGB no){
         return ((this.getRed() == no.getRed()) && (this.getGreen() == no.getGreen()) && (this.getBlue() == no.getBlue()));
