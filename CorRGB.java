@@ -39,4 +39,8 @@ public class CorRGB
     public String getCorHexadecimal(){
         return ("#" + Integer.toHexString(this.getRed()) + Integer.toHexString(this.getGreen()) + Integer.toHexString(this.getBlue())).toUpperCase();
     }
+    
+    //public CorRGB geraCopia(){
+        //return new CorRGB(this.getRed(), this.getGreen(), this.getBlue());
+    //}
 }
