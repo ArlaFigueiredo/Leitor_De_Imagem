@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Imagem
+comment1.params=largura\ altura
+comment1.target=Imagem(int,\ int)
+numComments=2

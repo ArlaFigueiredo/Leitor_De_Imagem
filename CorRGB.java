@@ -1,5 +1,11 @@
 public class CorRGB
 {
+    public static final CorRGB PRETA = new CorRGB(0,0,0);
+    public static final CorRGB BRANCA = new CorRGB(255,255,255);
+    public static final CorRGB RED = new CorRGB(255,0,0);
+    public static final CorRGB GREEN = new CorRGB(0,255,0);
+    public static final CorRGB BLUE = new CorRGB(0,0,255);
+        
     private int red;
     private int green;
     private int blue;
@@ -46,6 +52,12 @@ public class CorRGB
         return  Math.ceil(this.getRed() * 0.3 +
                 this.getGreen() * 0.59 + 
                 this.getBlue() * 0.11);
+    }
+    
+    public CorRGB cinza(){
+        int cinza = (int) this.getLuminosidade();
+        CorRGB novaCor = new CorRGB(cinza,cinza,cinza);
+        return novaCor;
     }
 
     public String getCorHexadecimal(){
