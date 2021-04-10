@@ -77,25 +77,25 @@ public class CorRGB
     }
     
     public void clarear(double percentual){
-        if(percentual >=1)
-            percentual = percentual / 100;
+        
+        percentual = (percentual / 100) + 1;
             
-        this.setRed(this.getRed() + (int)(Math.round(this.getRed()*percentual)));
+        this.setRed((int)(Math.round(this.getRed()*percentual)));
         
-        this.setGreen(this.getGreen() + (int)(Math.round(this.getGreen()*percentual)));
+        this.setGreen((int)(Math.round(this.getGreen()*percentual)));
         
-        this.setBlue(this.getBlue() +(int) (Math.round(this.getBlue()*percentual)));
+        this.setBlue((int)(Math.round(this.getBlue()*percentual)));
     }
     
     public void escurecer(double percentual){
-        if(percentual >=1)
-            percentual = percentual / 100;
         
-        this.setRed(this.getRed() - (int) (Math.round(this.getRed()*percentual)));
+        percentual = 1 - (percentual / 100);
         
-        this.setGreen(this.getGreen() - (int)(Math.round(this.getGreen()*percentual)));
+        this.setRed((int)(Math.round(this.getRed()*percentual)));
         
-        this.setBlue(this.getBlue() - (int) (Math.round(this.getBlue()*percentual)));
+        this.setGreen((int)(Math.round(this.getGreen()*percentual)));
+    
+        this.setBlue((int)(Math.round(this.getBlue()*percentual)));
     }
     
     
