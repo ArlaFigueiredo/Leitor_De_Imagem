@@ -20,19 +20,19 @@ public class Imagem
         this.imagem[posicao_altura][posicao_largura] = new CorRGB(red, green, blue);
     }
     
-    public CorRGB getPixel(int posicao_largura, int posicao_altura){
+    protected CorRGB getPixel(int posicao_largura, int posicao_altura){
         return this.imagem[posicao_altura][posicao_largura];
     }
     
-    public int getAltura(){
+    protected int getAltura(){
         return this.imagem.length;
     }
     
-    public int getLargura(){
+    protected int getLargura(){
         return this.imagem[0].length;
     }
     
-    public Imagem viraImagem(Imagem imagem){
+    private Imagem viraImagem(Imagem imagem){
         // Cria a nova imagem com as dimensões (largura X altura) invertidas
         Imagem newImagem = new Imagem(imagem.getAltura(), imagem.getLargura());
         
@@ -72,7 +72,6 @@ public class Imagem
                 }
             }
         }
-        
         return false;
     }
 }
