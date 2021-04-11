@@ -51,14 +51,23 @@ public class Imagem
         
         while(cont < 5){
             for (int i = 0; i < this.getAltura(); i++){
-                for (int j = 0; j < this.getLargura(); j++){
-                    // Se achar um pixel diferente, ira tentar virar a imagem
-                    if((this.imagem[i][j].equals(imagem.getPixel(j, i))) == false){
-                        vira = true;
-                        break;
-                    }
-                    if(i == (this.getAltura() - 1) && j == (this.getLargura() - 1)){
-                        if(i == (imagem.getAltura() - 1) && j == (imagem.getLargura() - 1)){
+                // Se a altura for diferente já tenta virar
+                if(this.getAltura() != imagem.getAltura()){
+                    vira = true;
+                }
+                else{
+                    for (int j = 0; j < this.getLargura(); j++){
+                        // Se a largura for diferente, já tenta virar
+                        if(this.getLargura() != imagem.getLargura()){
+                            vira = true;
+                            break;
+                        }
+                        // Se achar um pixel diferente, ira tentar virar a imagem
+                        if((this.imagem[i][j].equals(imagem.getPixel(j, i))) == false){
+                            vira = true;
+                            break;
+                        }
+                        if(i == (this.getAltura() - 1) && j == (this.getLargura() - 1)){
                             return true;
                         }
                     }
