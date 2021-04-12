@@ -83,4 +83,18 @@ public class Imagem
         }
         return false;
     }
+    
+    public Imagem novaImagemPB (Imagem imagem){
+        Imagem novaImagemPB = new Imagem(imagem.getAltura(), imagem.getLargura());        
+        for (int i = 0; i < novaImagemPB.getAltura(); i++){
+            for (int j = 0; j < novaImagemPB.getLargura(); j++){
+                novaImagemPB.modificaPixel(j,i, imagem.getPixel(j, i).cinza());
+            }
+        }       
+        return novaImagemPB;
+    }
+    
 }
+
+
+

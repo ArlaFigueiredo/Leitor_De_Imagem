@@ -97,8 +97,7 @@ public class CorRGB
     
         this.setBlue((int)(Math.round(this.getBlue()*percentual)));
     }
-    
-    
+        
     
     public boolean equals(CorRGB no){
         return ((this.getRed() == no.getRed()) && (this.getGreen() == no.getGreen()) && (this.getBlue() == no.getBlue()));
