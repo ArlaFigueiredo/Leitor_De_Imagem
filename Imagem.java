@@ -84,7 +84,7 @@ public class Imagem
         return false;
     }
     
-    public Imagem novaImagemPB (Imagem imagem){
+    private Imagem novaImagemPB(Imagem imagem){
         Imagem novaImagemPB = new Imagem(imagem.getAltura(), imagem.getLargura());        
         for (int i = 0; i < novaImagemPB.getAltura(); i++){
             for (int j = 0; j < novaImagemPB.getLargura(); j++){
@@ -94,7 +94,24 @@ public class Imagem
         return novaImagemPB;
     }
     
-}
-
-
-
+    
+    private int[] procuraPixel(int vetor[], CorRGB pixel){
+        vetor[2] = -1; //recebe um vetor de três posições e seta -1. esta última posição do vetor será um controlador
+        
+        for (int i = 0; i < this.getAltura(); i++){
+            for (int j = 0; j < this.getLargura(); j++){
+                if (this.getPixel(j,i) == pixel){
+                vetor[0] = i; //armazena a altura do pixel achado na imagem
+                vetor[1] = j; //armazena a largura do pixel achado na imagem
+                vetor[2] = 1;//muda para 1, caso ache o pixel. 
+                break;
+                }            
+            }
+        if (vetor[2]==1)
+            break;
+        }
+        return vetor;
+    }
+    
+    
+} 
