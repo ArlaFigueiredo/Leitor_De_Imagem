@@ -84,35 +84,37 @@ public class Imagem
         return false;
     }
     
-    private Imagem novaImagemPB(Imagem imagem){
-        Imagem novaImagemPB = new Imagem(imagem.getAltura(), imagem.getLargura());        
+    private Imagem novaImagemPB(){
+        Imagem novaImagemPB = new Imagem(this.getAltura(), this.getLargura());        
         for (int i = 0; i < novaImagemPB.getAltura(); i++){
             for (int j = 0; j < novaImagemPB.getLargura(); j++){
-                novaImagemPB.modificaPixel(j,i, imagem.getPixel(j, i).cinza());
+                novaImagemPB.modificaPixel(j,i, this.getPixel(j, i).cinza());
             }
         }       
         return novaImagemPB;
     }
     
     
-    private int[] procuraPixel(int vetor[], CorRGB pixel){
-        vetor[2] = -1; //recebe um vetor de três posições e seta -1. esta última posição do vetor será um controlador
-        
-        for (int i = 0; i < this.getAltura(); i++){
-            for (int j = 0; j < this.getLargura(); j++){
-                if (this.getPixel(j,i) == pixel){
-                vetor[0] = i; //armazena a altura do pixel achado na imagem
-                vetor[1] = j; //armazena a largura do pixel achado na imagem
-                vetor[2] = 1;//muda para 1, caso ache o pixel. 
-                System.out.println("testando");
-                break;
-                }            
+    private int[] procuraPixel(int controlador[], Imagem fragmento){
+        boolean stop = false;
+            for (int i = controlador[1]; i < this.getAltura(); i++){
+                for (int j = controlador[0]; j < this.getLargura(); j++){
+                    if ((this.getPixel(j,i) == fragmento.getPixel(0,0)) && (i+fragmento.getAltura()<=this.getAltura()) && (j+fragmento.getLargura()<=this.getLargura())){
+                        controlador[0] = j; //armazena a largura do pixel achado na imagem
+                        controlador[1] = i; //armazena a altura do pixel achado na imagem
+                        stop = true;
+                        break;
+                    }
+                    if(i == (this.getAltura()-1) && j==(this.getLargura()-1)){
+                        // Se não achou nada, coloca -1 nas posições como um indicador
+                        controlador[0] = -1; 
+                        controlador[1] = -1;
+                    }
+                }
+                if(stop)
+                    break;
             }
-        if (vetor[2]==1)
-            System.out.println("TesteProcuraPixel_ACHOU");
-            break;
-        }
-        return vetor;
+        return controlador;
     }
     
     
