@@ -84,7 +84,7 @@ public class Imagem
         return false;
     }
 
-    private Imagem novaImagemPB(){
+    public Imagem novaImagemPB(){
         Imagem novaImagemPB = new Imagem(this.getAltura(), this.getLargura());        
         for (int i = 0; i < novaImagemPB.getAltura(); i++){
             for (int j = 0; j < novaImagemPB.getLargura(); j++){
@@ -120,17 +120,16 @@ public class Imagem
         int cont = 0;
         boolean retorno = false; //retorno lógicboolean ecx = false; // trata exceções
         int[] controlador = new int[2];//variável de retorno de posições da imagem + retorno lógico da função procuraPixel()
-        controlador[0] = 0; // largura
-        controlador[1] = 0; //altura
         boolean vira = false;
         
         
         while(cont < 4){
             boolean continua_busca = true;
-            
+            controlador[0] = 0;
+            controlador[1] = 0;            
             while(continua_busca == true){
                 boolean stop = false;
-    
+
                 controlador = procuraPixel(controlador, fragmento);
     
                 if(controlador[0] != -1){ //o retorno da função procuraPixel() foi positivo
@@ -180,6 +179,7 @@ public class Imagem
                                 if ((iFrag == (fragmento.getAltura() - 1)) && (jFrag == (fragmento.getLargura() - 1))){// verifica ińtegra do fragmento na imagem
                                     retorno = true; // retorna true
                                     continua_busca = false; // guarda para encerrar while
+                                    cont  = 4;
                                 }
                             }
                         }
