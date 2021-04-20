@@ -131,26 +131,26 @@ public class Imagem
             while(continua_busca == true){
                 boolean stop = false;
 
+                // procura a posição na imagem cujo pixel é igual igual ao Pixel (0,0) do fragmento 
                 controlador = procuraPixel(controlador, fragmento);
     
-                if(controlador[0] != -1){ //o retorno da função procuraPixel() foi positivo
+                if(controlador[0] != -1){ // A função procuraPixel() achou uma posição válida
                     for (int iFrag = 0, iImag = controlador[1]; iFrag < fragmento.getAltura(); iFrag++, iImag++){
                         for (int jFrag = 0, jImag = controlador[0]; jFrag < fragmento.getLargura(); jFrag++, jImag++){
     
-                            if(!this.getPixel(jImag, iImag).equals(fragmento.getPixel(jFrag, iFrag))){  //não achou uma igualdade, precisa voltar a procurar
-    
+                            if(!this.getPixel(jImag, iImag).equals(fragmento.getPixel(jFrag, iFrag))){
                                 // EXCEÇÃO CASO 1 A posicao do controlador de largura é a ultima coluna da imagem
-                                if(controlador[0] == this.getLargura()-1){ // verifica se a posicao do controlador de largura já foi a última coluna da imagem
+                                if(controlador[0] == this.getLargura()-1){
                                     if(controlador[1] == this.getAltura()-1){
                                         continua_busca =false;
                                         vira = true;
                                         stop = true;
                                         break;
                                     }else{
-                                        // se não, vai para a proxima linha
+                                        // se não for a ultima posição da imagem, vai para a proxima linha
                                         stop = true;
                                         controlador[1] =+ 1; // incrementa altura
-                                        controlador[0] = 0;
+                                        controlador[0] = 0; // zera largura
                                         break; //retorna ao primeiro laço
                                     }
                                 }
