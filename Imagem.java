@@ -85,7 +85,7 @@ public class Imagem
     }
 
     public Imagem novaImagemPB(){
-        Imagem novaImagemPB = new Imagem(this.getAltura(), this.getLargura());        
+        Imagem novaImagemPB = new Imagem(this.getLargura(), this.getAltura());        
         for (int i = 0; i < novaImagemPB.getAltura(); i++){
             for (int j = 0; j < novaImagemPB.getLargura(); j++){
                 novaImagemPB.modificaPixel(j,i, this.getPixel(j, i).cinza());
