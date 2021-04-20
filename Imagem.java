@@ -98,6 +98,7 @@ public class Imagem
         boolean stop = false;
         for (int i = controlador[1]; i < this.getAltura(); i++){
             for (int j = controlador[0]; j < this.getLargura(); j++){
+                // Verifica se achou o primeiro pixel igual e se o fragmento ainda cabe na imagem
                 if ((this.getPixel(j,i).equals(fragmento.getPixel(0,0))) && (i+fragmento.getAltura()<=this.getAltura()) && (j+fragmento.getLargura()<=this.getLargura())){
                     controlador[0] = j; //armazena a largura do pixel achado na imagem
                     controlador[1] = i; //armazena a altura do pixel achado na imagem
