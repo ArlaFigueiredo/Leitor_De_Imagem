@@ -46,10 +46,10 @@ public class Imagem
     }
 
     public boolean equals(Imagem imagem){
-        int cont = 1;
+        int cont = 0;
         boolean vira = false;
 
-        while(cont < 5){
+        while(cont < 4){
             for (int i = 0; i < this.getAltura(); i++){
                 // Se a altura for diferente já tenta virar
                 if(this.getAltura() != imagem.getAltura()){
@@ -62,7 +62,7 @@ public class Imagem
                             vira = true;
                             break;
                         }
-                        // Se achar um pixel diferente, ira tentar virar a imagem
+                        // Se achar um pixel diferente, irá tentar virar a imagem
                         if((this.imagem[i][j].equals(imagem.getPixel(j, i))) == false){
                             vira = true;
                             break;
