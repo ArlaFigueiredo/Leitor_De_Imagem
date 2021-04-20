@@ -42,7 +42,7 @@ iii. RED #FF0000
 iv. GREEN #00FF00
 v. BLUE #0000FF
 
-# Classe CorRGB
+# Classe Imagem
 Escreva uma classe que represente uma Imagem como um mapa bidimensional de cores RGB.
 
 i. a representação estática da classe criada
