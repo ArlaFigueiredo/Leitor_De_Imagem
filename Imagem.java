@@ -48,27 +48,24 @@ public class Imagem
     public boolean equals(Imagem imagem){
         int cont = 0;
         boolean vira = false;
+        boolean retorno = false;
 
         while(cont < 4){
             for (int i = 0; i < this.getAltura(); i++){
-                // Se a altura for diferente já tenta virar
-                if(this.getAltura() != imagem.getAltura()){
+                // Se a altura ou a largura for diferente já tenta virar
+                if((this.getAltura() != imagem.getAltura()) || (this.getLargura() != imagem.getLargura())){
                     vira = true;
                 }
                 else{
                     for (int j = 0; j < this.getLargura(); j++){
-                        // Se a largura for diferente, já tenta virar
-                        if(this.getLargura() != imagem.getLargura()){
-                            vira = true;
-                            break;
-                        }
                         // Se achar um pixel diferente, irá tentar virar a imagem
                         if((this.imagem[i][j].equals(imagem.getPixel(j, i))) == false){
                             vira = true;
                             break;
                         }
+                        // Se conseguiu chegar ao final da imagem, é por que são iguais
                         if(i == (this.getAltura() - 1) && j == (this.getLargura() - 1)){
-                            return true;
+                            retorno = true;
                         }
                     }
                 }
@@ -81,7 +78,7 @@ public class Imagem
                 }
             }
         }
-        return false;
+        return retorno;
     }
 
     public Imagem novaImagemPB(){
