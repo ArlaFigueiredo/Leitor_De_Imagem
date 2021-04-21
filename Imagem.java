@@ -127,64 +127,36 @@ public class Imagem
             controlador[1] = 0;            
             while(continua_busca == true){
                 boolean stop = false;
-
                 // procura a posição na imagem cujo pixel é igual igual ao Pixel (0,0) do fragmento 
                 controlador = procuraPixel(controlador, fragmento);
-    
-                if(controlador[0] != -1){ // A função procuraPixel() achou uma posição válida
+                // A função procuraPixel() achou uma posição válida
+                if(controlador[0] != -1){
                     for (int iFrag = 0, iImag = controlador[1]; iFrag < fragmento.getAltura(); iFrag++, iImag++){
                         for (int jFrag = 0, jImag = controlador[0]; jFrag < fragmento.getLargura(); jFrag++, jImag++){
-    
                             if(!this.getPixel(jImag, iImag).equals(fragmento.getPixel(jFrag, iFrag))){
-                                // EXCEÇÃO CASO 1 A posicao do controlador de largura é a ultima coluna da imagem
+                                // Caso a posicao do controlador de largura é a ultima coluna da imagem, vai para proxima linha
                                 if(controlador[0] == this.getLargura()-1){
-                                    if(controlador[1] == this.getAltura()-1){
-                                        continua_busca =false;
-                                        vira = true;
-                                        stop = true;
-                                        break;
-                                    }else{
-                                        // se não for a ultima posição da imagem, vai para a proxima linha
-                                        stop = true;
-                                        controlador[1] =+ 1; // incrementa altura
-                                        controlador[0] = 0; // zera largura
-                                        break; //retorna ao primeiro laço
-                                    }
+                                    stop = true;
+                                    controlador[1] =+ 1;
+                                    controlador[0] = 0;
+                                    break;
                                 }
-    
-                                // EXCEÇÃO CASO 2 A posição do controlador de altura é a ultima da imagem   
-                                else if(controlador[1] == this.getAltura()-1){  
-                                    if(fragmento.getAltura() > 1){ // se a posição de altura do fragmento não é a ultima da imagem   
-                                        continua_busca = false; // guarda para encerrar while
-                                        vira = true;
-                                        stop = true;
-                                        break;
-                                    }
-                                    else{
-                                        controlador[0] += 1;
-                                        stop = true;
-                                        break;
-                                    }
-                                }
-                                // EXCEÇÃO CASO 3 Não igualou pixels, mas ainda tem posições a comparar
                                 else{
                                     controlador[0] += 1;
                                     stop = true;
                                     break;
                                 }                       
                             }
-                            else{
-                                if ((iFrag == (fragmento.getAltura() - 1)) && (jFrag == (fragmento.getLargura() - 1))){// verifica ińtegra do fragmento na imagem
-                                    retorno = true; // retorna true
-                                    continua_busca = false; // guarda para encerrar while
-                                    cont  = 4;
-                                }
+                            if ((iFrag == (fragmento.getAltura() - 1)) && (jFrag == (fragmento.getLargura() - 1))){
+                                retorno = true;
+                                continua_busca = false;
+                                cont  = 4;
                             }
                         }
                         if(stop)
-                            break; //quebra segundo laço
+                            break; //Quebra segundo laço
                     }
-                }else{ //o retorno da função procuraPixel() foi negativo e sai do while
+                }else{ // O retorno da função procuraPixel() foi negativo, vira a imagem
                     vira = true;
                     continua_busca = false;
                 }
