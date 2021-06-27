@@ -13,6 +13,17 @@ public class Atlas{
         this.mapas = novo;
     };
 
-    // TODO: Método para trazer mapas de acordo com a similaridade     
+    public Mapa[] getMapasPorLuminosidade(int red, int green, int blue, double pctMinimo, double limiarLuminosidade){
+
+        Mapa[] mapasSimilares = new Mapa[this.mapas.length];
+        int cont = 0;
+
+        for(int i = 0; i < this.mapas.length; i++){
+            if(this.mapas[i].getSimilaridade(int red, int green, int blue, double limiarLuminosidade) >= pctMinimo){
+                mapasSimilares[cont] = this.mapas[i]; 
+            }
+            
+        }      
+    }
     
 }
