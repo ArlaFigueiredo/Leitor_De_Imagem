@@ -13,17 +13,17 @@ public class Atlas{
         this.mapas = novo;
     };
 
-    public Mapa[] getMapasPorLuminosidade(int red, int green, int blue, double pctMinimo, double limiarLuminosidade){
+    public Atlas getMapasPorLuminosidade(int red, int green, int blue, double pctMinimo, double limiarLuminosidade){
 
-        Mapa[] mapasSimilares = new Mapa[this.mapas.length];
-        int cont = 0;
+        Atlas mapasSimilares = new Atlas();
 
         for(int i = 0; i < this.mapas.length; i++){
-            if(this.mapas[i].getSimilaridade(int red, int green, int blue, double limiarLuminosidade) >= pctMinimo){
-                mapasSimilares[cont] = this.mapas[i]; 
+            if(this.mapas[i].getPercentualPixelsSimilares(new CorRGB(red, green, blue), double limiarLuminosidade) >= pctMinimo){
+                mapasSimilares.adicionaMapa(this.mapas[i]); 
             }
             
-        }      
-    }
+        } 
+        return mapasSimilares;     
+    };
     
 }

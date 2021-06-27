@@ -20,18 +20,22 @@ public abstract class Mapa{
         return this.getImagem()[0].length;
     };
 
-    public int area(){
+    public int getArea(){
         return this.getAltura() * this.getLargura();
     };
 
-    public double getSimilaridade(int red, int green, int blue, double limiarLuminosidade){
+    public double getPercentualPixelsSimilares(CorRGB cor, double limiarLuminosidade){
 
-        double pixelsSimilares = 0;
+        int pixelsSimilares = 0;
 
         for(int x = 0; x <= this.getAltura(); x++)
           for(int y = 0; y <= this.getLargura(); y++){
-              
-          }     
+            moduloPercenturalLuminosidade = (this.getPixel(x, y).getSimilaridade(cor) / this.getPixel(x, y).getLuminosidade()) * 100;
+            if(moduloPercenturalLuminosidade <= limiarLuminosidade)
+                pixelsSimilares = pixelsSimilares + 1;
+          } 
+        
+        return pixelsSimilares / this.getArea();    
 
     }   
 }
