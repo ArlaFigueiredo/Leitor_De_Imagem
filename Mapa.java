@@ -8,8 +8,8 @@ public abstract class Mapa{
         this.descricao = descricao;
     }; 
     
-    protected abstract Cor getPixel(int x, int y); 
-    protected abstract void setPixel(int x, int y, Cor pixel);
+    protected abstract Cor getPixel(int posicao_altura, int posicao_largura); 
+    protected abstract void setPixel(int posicao_altura, int posicao_largura, Cor pixel);
     protected abstract Cor[][] getImagem();
     
     public int getAltura(){
