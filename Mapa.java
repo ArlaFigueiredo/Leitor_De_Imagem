@@ -1,9 +1,9 @@
 public abstract class Mapa{
     
-    private int id;
+    private String id;
     private String descricao;
     
-    public Mapa(int id, String descricao){
+    public Mapa(String id, String descricao){
         this.id = id;
         this.descricao = descricao;
     }; 
