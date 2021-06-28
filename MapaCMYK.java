@@ -2,7 +2,7 @@ public class MapaCMYK extends Mapa
 {
     private CorCMYK[][] imagem;
 
-    public MapaCMYK(String id, String descricao, CorRGB[][] imagem){
+    public MapaCMYK(String id, String descricao, CorCMYK[][] imagem){
         super(id, descricao);
         this.imagem = imagem;
     }; 

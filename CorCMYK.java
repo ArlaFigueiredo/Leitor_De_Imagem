@@ -36,19 +36,19 @@ public class CorCMYK extends Cor
         return this.key;
     };
 
-    private int setCyan(int cyan){
+    private void setCyan(int cyan){
         this.cyan = verificaCMYK(cyan);
     };   
 
-    private int setMagenta(int magenta){
+    private void setMagenta(int magenta){
         this.magenta = verificaCMYK(magenta);
     };
 
-    private int setYellow(int yellow){
+    private void setYellow(int yellow){
         this.yellow = verificaCMYK(yellow);
     };
 
-    private int setKey(int key){
+    private void setKey(int key){
         this.key = verificaCMYK(key);
     };
 

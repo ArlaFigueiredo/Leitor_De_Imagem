@@ -45,6 +45,10 @@ public class CorRGB extends Cor
         this.blue = verificaRGB(blue);
     };
 
+    public String getCorHexadecimal(){
+        return ("#" + Integer.toHexString(this.getRed()) + Integer.toHexString(this.getGreen()) + Integer.toHexString(this.getBlue())).toUpperCase();
+    }
+    
     public int getLuminosidade(){
         return  (int)(this.getRed() * 0.3 +
                 this.getGreen() * 0.59 + 
