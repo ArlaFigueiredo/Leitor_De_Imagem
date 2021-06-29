@@ -11,23 +11,28 @@ public abstract class Mapa{
     protected abstract Cor getPixel(int posicao_altura, int posicao_largura); 
     protected abstract void setPixel(int posicao_altura, int posicao_largura, Cor pixel);
     protected abstract Cor[][] getImagem();
+    public abstract String getCodTipo();
+
+    public String getId(){
+        return this.id;
+    }
+
+    public String getDescricao(){
+        return this.descricao;
+    }
     
     public int getAltura(){
         return this.getImagem().length;
-    };  
+    }  
 
     public int getLargura(){
         return this.getImagem()[0].length;
-    };
+    }
 
     public int getArea(){
         return this.getAltura() * this.getLargura();
-    };
-    
-    public String getDescricao() {
-    	return this.descricao;
     }
-
+    
     public double getPercentualPixelsSimilares(CorRGB cor, double limiarLuminosidade){
 
         int pixelsSimilares = 0;
@@ -41,5 +46,9 @@ public abstract class Mapa{
         
         return pixelsSimilares / this.getArea();    
 
+    }
+
+    public String toString(){
+        return "Mapa [" + this.getId() + "] " + this.getDescricao() + " - Formato *" + this.getCodTipo();
     }   
 }

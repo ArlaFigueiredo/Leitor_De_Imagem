@@ -12,13 +12,13 @@ public class Sistema{
         
             CaptadorDeImagens captador = new CaptadorDeImagens();
             
-            MapaRGB mapa1 = new MapaRGB("EST01","Mapa Estrada da Lama",captador.captaEstrada());
-            MapaRGB mapa2 = new MapaRGB("PNT68","Mapa Ponte Rio São Francisco",captador.captaPonte());
-            MapaRGB mapa3 = new MapaRGB("FLR90","Mapa Floresta Amazônia",captador.captaFloresta());
+            MapaRGB mapa1 = new MapaRGB("EST01","Estrada da Lama",captador.captaEstrada());
+            MapaRGB mapa2 = new MapaRGB("PNT68","Ponte Rio São Francisco",captador.captaPonte());
+            MapaRGB mapa3 = new MapaRGB("FLR90","Floresta Amazônia",captador.captaFloresta());
           
-            MapaCMYK mapa4 = new MapaCMYK("PRT45","Mapa Porto Rio Douro",captador.captaPorto());
-            MapaCMYK mapa5 = new MapaCMYK("PRA89","Mapa Praia do Forte",captador.captaPraia());
-            MapaCMYK mapa6 = new MapaCMYK("RDV03","Mapa Rodovia 324",captador.captaRodovia());
+            MapaCMYK mapa4 = new MapaCMYK("PRT45","Porto Rio Douro",captador.captaPorto());
+            MapaCMYK mapa5 = new MapaCMYK("PRA89","Praia do Forte",captador.captaPraia());
+            MapaCMYK mapa6 = new MapaCMYK("RDV03","Rodovia 324",captador.captaRodovia());
            
             
             this.atlas.adicionaMapa(mapa1);
@@ -31,7 +31,8 @@ public class Sistema{
     }
 
     public void run(){
-        this.atlas.listarMapas();
+        for(Mapa m : this.atlas)
+           System.out.println(m);
 
         //TODO IMPLEMENTAR A BUSCA POR SIMILARIDADE DOS MAPAS RGB ACIMA
         

@@ -12,19 +12,20 @@ public class Atlas{
       
         novo[novo.length - 1] = mapa;
         this.mapas = novo;
-    };
-
-    public void listarMapas() {
-        for(Mapa mapa: mapas) {
-            System.out.println(mapa.getDescricao());
-        }
-    };
+    }
 
     private Mapa[] getMapas(){
 
         return this.mapas;
 
-    };
+    }
+
+    public String toString(){
+        String rep = "";
+        for(Mapa mapa : this.mapas)
+          rep = rep + mapa + "\n";
+        return rep;  
+    }
 
     public Mapa[] getMapasPorLuminosidade(int red, int green, int blue, double pctMinimo, double limiarLuminosidade){
 
@@ -37,6 +38,6 @@ public class Atlas{
             
         } 
         return mapasSimilares.getMapas();     
-    };
+    }
     
 }
