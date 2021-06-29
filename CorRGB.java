@@ -5,6 +5,7 @@ public class CorRGB extends Cor
     public static final CorRGB RED = new CorRGB(255,0,0);
     public static final CorRGB GREEN = new CorRGB(0,255,0);
     public static final CorRGB BLUE = new CorRGB(0,0,255);
+    public static final CorRGB BROWN = new CorRGB(121, 85, 72);
         
     private int red;
     private int green;

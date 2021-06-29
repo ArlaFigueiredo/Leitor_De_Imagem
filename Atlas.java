@@ -1,4 +1,5 @@
 public class Atlas{
+
     private Mapa[] mapas = new Mapa[0];
     
     
@@ -13,7 +14,19 @@ public class Atlas{
         this.mapas = novo;
     };
 
-    public Atlas getMapasPorLuminosidade(int red, int green, int blue, double pctMinimo, double limiarLuminosidade){
+    public void listarMapas() {
+        for(Mapa mapa: mapas) {
+            System.out.println(mapa.getDescricao());
+        }
+    };
+
+    private Mapa[] getMapas(){
+
+        return this.mapas;
+
+    };
+
+    public Mapa[] getMapasPorLuminosidade(int red, int green, int blue, double pctMinimo, double limiarLuminosidade){
 
         Atlas mapasSimilares = new Atlas();
 
@@ -23,14 +36,7 @@ public class Atlas{
             }
             
         } 
-        return mapasSimilares;     
+        return mapasSimilares.getMapas();     
     };
-    
-    
-    public void listarMapas() {
-    	for(Mapa mapa: mapas) {
-    		System.out.println(mapa.getDescricao());
-    	}
-    }
     
 }
