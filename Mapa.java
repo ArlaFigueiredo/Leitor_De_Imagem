@@ -44,7 +44,7 @@ public abstract class Mapa{
                 pixelsSimilares = pixelsSimilares + 1;
           } 
         
-        return pixelsSimilares / this.getArea();    
+        return (pixelsSimilares / this.getArea()) * 100;    
 
     }
 
