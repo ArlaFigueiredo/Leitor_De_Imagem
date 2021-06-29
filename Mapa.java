@@ -39,7 +39,7 @@ public abstract class Mapa{
 
         for(int x = 0; x <= this.getAltura(); x++)
           for(int y = 0; y <= this.getLargura(); y++){
-            int moduloPercenturalLuminosidade = (this.getPixel(x, y).getSimilaridade(cor) / this.getPixel(x, y).getLuminosidade()) * 100;
+            int moduloPercenturalLuminosidade = (this.getPixel(x, y).getSimilaridade(cor) / cor.getLuminosidade()) * 100;
             if(moduloPercenturalLuminosidade <= limiarLuminosidade)
                 pixelsSimilares = pixelsSimilares + 1;
           } 
