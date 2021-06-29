@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Cor
+comment1.params=
+comment1.target=int\ getLuminosidade()
+comment2.params=outro
+comment2.target=int\ getSimilaridade(Cor)
+numComments=3

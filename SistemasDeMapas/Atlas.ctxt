@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Atlas
+comment1.params=mapa
+comment1.target=void\ adicionaMapa(Mapa)
+comment2.params=
+comment2.target=Mapa[]\ getMapas()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment4.params=red\ green\ blue\ pctMinimo\ limiarLuminosidade
+comment4.target=Mapa[]\ getMapasPorLuminosidade(int,\ int,\ int,\ double,\ double)
+numComments=5
