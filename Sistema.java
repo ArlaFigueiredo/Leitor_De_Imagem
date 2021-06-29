@@ -35,8 +35,16 @@ public class Sistema{
            System.out.println(m);
 
         //TODO IMPLEMENTAR A BUSCA POR SIMILARIDADE DOS MAPAS RGB ACIMA
+
+        // mapasSimilares = this.atlas.getMapasPorLuminosidade();
         
         //TODO IMPLEMENTAR A CONVERSÃO DOS MAPAS CMYK PARA RGB
+
+        Conversor conversor = new Conversor();
+        ConversorCMYKToRGB conversorCMYKToRGB = new ConversorCMYKToRGB();
+
+        MapaRGB mapa4rgb = conversor.converter(mapa4, conversorCMYKToRGB);
+        System.out.println(mapa4rgb);
 
     }
     
