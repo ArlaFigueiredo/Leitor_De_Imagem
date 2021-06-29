@@ -14,7 +14,7 @@ public class Atlas{
         this.mapas = novo;
     }
 
-    private Mapa[] getMapas(){
+    public Mapa[] getMapas(){
 
         return this.mapas;
 
@@ -30,7 +30,8 @@ public class Atlas{
     public Mapa[] getMapasPorLuminosidade(int red, int green, int blue, double pctMinimo, double limiarLuminosidade){
 
         Atlas mapasSimilares = new Atlas();
-
+        
+        
         for(int i = 0; i < this.mapas.length; i++){
             if(this.mapas[i].getPercentualPixelsSimilares(new CorRGB(red, green, blue),  limiarLuminosidade) >= pctMinimo){
                 mapasSimilares.adicionaMapa(this.mapas[i]); 
