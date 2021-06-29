@@ -18,8 +18,8 @@ public class Sistema{
             CaptadorDeImagens captador = new CaptadorDeImagens();
             
             mapa1 = new MapaRGB("EST01","Estrada da Lama",captador.captaEstrada());
-            mapa2 = new MapaRGB("PNT68","Ponte Rio S„o Francisco",captador.captaPonte());
-            mapa3 = new MapaRGB("FLR90","Floresta AmazÙnia",captador.captaFloresta());
+            mapa2 = new MapaRGB("PNT68","Ponte Rio S√£o Francisco",captador.captaPonte());
+            mapa3 = new MapaRGB("FLR90","Floresta Amaz√¥nia",captador.captaFloresta());
           
             mapa4 = new MapaCMYK("PRT45","Porto Rio Douro",captador.captaPorto());
             mapa5 = new MapaCMYK("PRA89","Praia do Forte",captador.captaPraia());
@@ -45,7 +45,7 @@ public class Sistema{
         for(Mapa mapaSimilar : mapasSimilares)
         	System.out.println(mapaSimilar);
         
-        //TODO IMPLEMENTAR A CONVERS√O DOS MAPAS CMYK PARA RGB
+        //TODO IMPLEMENTAR A CONVERS√ÉO DOS MAPAS CMYK PARA RGB
 
         Conversor conversor = new Conversor();
         ConversorCMYKToRGB conversorCMYKToRGB = new ConversorCMYKToRGB();
