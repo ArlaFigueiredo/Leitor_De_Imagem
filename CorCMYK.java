@@ -2,6 +2,16 @@ public class CorCMYK extends Cor
 {
     public static final CorCMYK PRETA = new CorCMYK(0,0,0,1);
     public static final CorCMYK BRANCA = new CorCMYK(0,0,0,0);
+    public static final CorCMYK CYAN = new CorCMYK(100,0,0,0);
+    public static final CorCMYK MAGENTA = new CorCMYK(0,100,0,0);
+    public static final CorCMYK YELLOW = new CorCMYK(0,0,100,0);
+    public static final CorCMYK KEY = new CorCMYK(0,0,0,100);
+        
+    public static final CorCMYK YELLOWSAND = new CorCMYK(0,8,77,0);
+    public static final CorCMYK GREENTREE = new CorCMYK(100,0,100,0);
+    public static final CorCMYK BLUEWATER = new CorCMYK(100,100,0,0);
+    public static final CorCMYK GRAY = new CorCMYK(0,0,0,38);
+    public static final CorCMYK BROWN = new CorCMYK(0,30,40,53);
         
     private int cyan;
     private int magenta;

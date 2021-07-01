@@ -98,30 +98,30 @@ public class CaptadorDeImagens {
 		
 		for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-            	imagemPorto[i][j] = new CorCMYK(0,30,40,53);
+            	imagemPorto[i][j] = CorCMYK.BROWN;
             }
         }
 		
-		imagemPorto[0][0] = new CorCMYK(100,0,100,0);
-		imagemPorto[1][0] = new CorCMYK(100,0,100,0);
-		imagemPorto[2][0] = new CorCMYK(0,8,77,0);
+		imagemPorto[0][0] = CorCMYK.GREENTREE;
+		imagemPorto[1][0] = CorCMYK.GREENTREE;
+		imagemPorto[2][0] = CorCMYK.YELLOWSAND;
 		
-		imagemPorto[0][2] = new CorCMYK(100,0,100,0);
-		imagemPorto[1][2] = new CorCMYK(100,0,100,0);
-		imagemPorto[2][2] = new CorCMYK(0,8,77,0);
+		imagemPorto[0][2] = CorCMYK.GREENTREE;
+		imagemPorto[1][2] = CorCMYK.GREENTREE;
+		imagemPorto[2][2] = CorCMYK.YELLOWSAND;
 		
-		imagemPorto[0][4] = new CorCMYK(100,0,100,0);
-		imagemPorto[1][4] = new CorCMYK(100,0,100,0);
-		imagemPorto[2][4] = new CorCMYK(0,8,77,0);
+		imagemPorto[0][4] = CorCMYK.GREENTREE;
+		imagemPorto[1][4] = CorCMYK.GREENTREE;
+		imagemPorto[2][4] = CorCMYK.YELLOWSAND;
 
 		
-		imagemPorto[0][1] = new CorCMYK(100,0,100,0);
-		imagemPorto[3][1] = new CorCMYK(100,100,0,0);
-		imagemPorto[4][1] = new CorCMYK(100,100,0,0);
+		imagemPorto[0][1] = CorCMYK.GREENTREE;
+		imagemPorto[3][1] = CorCMYK.BLUEWATER;
+		imagemPorto[4][1] = CorCMYK.BLUEWATER;
 		
-		imagemPorto[0][3] = new CorCMYK(100,0,100,0);
-		imagemPorto[3][3] = new CorCMYK(100,100,0,0);
-		imagemPorto[4][3] = new CorCMYK(100,100,0,0);
+		imagemPorto[0][3] = CorCMYK.GREENTREE;
+		imagemPorto[3][3] = CorCMYK.BLUEWATER;
+		imagemPorto[4][3] = CorCMYK.BLUEWATER;
 		
 		return imagemPorto;
 	}
@@ -132,32 +132,32 @@ public class CaptadorDeImagens {
 		
 		for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-            	imagemPraia[i][j] = new CorCMYK(0,8,77,0);
+            	imagemPraia[i][j] = CorCMYK.YELLOWSAND;
             }
         }
 		
-		imagemPraia[0][0] = new CorCMYK(100,0,100,0);
-		imagemPraia[1][0] = new CorCMYK(0,0,0,38);
-		imagemPraia[2][0] = new CorCMYK(0,0,0,38);
-		imagemPraia[3][0] = new CorCMYK(100,0,100,0);
+		imagemPraia[0][0] = CorCMYK.GREENTREE;
+		imagemPraia[1][0] = CorCMYK.GRAY;
+		imagemPraia[2][0] = CorCMYK.GRAY;
+		imagemPraia[3][0] = CorCMYK.GREENTREE;
 		
-		imagemPraia[0][1] = new CorCMYK(0,0,0,38);
-		imagemPraia[1][1] = new CorCMYK(0,0,0,38);
-		imagemPraia[2][1] = new CorCMYK(100,0,100,0);
+		imagemPraia[0][1] = CorCMYK.GRAY;
+		imagemPraia[1][1] = CorCMYK.GRAY;
+		imagemPraia[2][1] = CorCMYK.GREENTREE;
 		
-		imagemPraia[0][2] = new CorCMYK(0,0,0,38);
-		imagemPraia[1][2] = new CorCMYK(100,0,100,0);
+		imagemPraia[0][2] = CorCMYK.GRAY;
+		imagemPraia[1][2] = CorCMYK.GREENTREE;
 		
-		imagemPraia[0][3] = new CorCMYK(100,0,100,0);
+		imagemPraia[0][3] = CorCMYK.GREENTREE;
 		
-		imagemPraia[2][4] = new CorCMYK(100,100,0,0);
-		imagemPraia[3][4] = new CorCMYK(100,100,0,0);
-		imagemPraia[4][4] = new CorCMYK(100,100,0,0);
+		imagemPraia[2][4] = CorCMYK.BLUEWATER;
+		imagemPraia[3][4] = CorCMYK.BLUEWATER;
+		imagemPraia[4][4] = CorCMYK.BLUEWATER;
 		
-		imagemPraia[3][3] = new CorCMYK(100,100,0,0);
-		imagemPraia[4][3] = new CorCMYK(100,100,0,0);
+		imagemPraia[3][3] = CorCMYK.BLUEWATER;
+		imagemPraia[4][3] = CorCMYK.BLUEWATER;
 		
-		imagemPraia[4][2] = new CorCMYK(100,100,0,0);
+		imagemPraia[4][2] = CorCMYK.BLUEWATER;
 		
 		
 		return imagemPraia;
@@ -170,33 +170,33 @@ public class CaptadorDeImagens {
 		
 		for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-            	imagemRodovia[i][j] = new CorCMYK(0,0,0,38);
+            	imagemRodovia[i][j] = CorCMYK.GRAY;
             }
         }
 		
-		imagemRodovia[0][0] = new CorCMYK(100,0,100,0);
-		imagemRodovia[1][0] = new CorCMYK(0,30,40,53);
-		imagemRodovia[2][0] = new CorCMYK(100,0,100,0);
+		imagemRodovia[0][0] = CorCMYK.GREENTREE;
+		imagemRodovia[1][0] = CorCMYK.BROWN;
+		imagemRodovia[2][0] = CorCMYK.GREENTREE;
 		
-		imagemRodovia[0][2] = new CorCMYK(100,0,100,0);
-		imagemRodovia[1][2] = new CorCMYK(0,30,40,53);
-		imagemRodovia[2][2] = new CorCMYK(100,0,100,0);
+		imagemRodovia[0][2] = CorCMYK.GREENTREE;
+		imagemRodovia[1][2] = CorCMYK.BROWN;
+		imagemRodovia[2][2] = CorCMYK.GREENTREE;
 		
-		imagemRodovia[0][4] = new CorCMYK(100,0,100,0);
-		imagemRodovia[1][4] = new CorCMYK(0,30,40,53);
-		imagemRodovia[2][4] = new CorCMYK(100,0,100,0);
+		imagemRodovia[0][4] = CorCMYK.GREENTREE;
+		imagemRodovia[1][4] = CorCMYK.BROWN;
+		imagemRodovia[2][4] = CorCMYK.GREENTREE;
 		
-		imagemRodovia[0][0] = new CorCMYK(100,0,100,0);
-		imagemRodovia[0][0] = new CorCMYK(0,30,40,53);
-		imagemRodovia[0][0] = new CorCMYK(100,0,100,0);
+		imagemRodovia[0][0] = CorCMYK.GREENTREE;
+		imagemRodovia[0][0] = CorCMYK.BROWN;
+		imagemRodovia[0][0] = CorCMYK.GREENTREE;
 
-		imagemRodovia[0][0] = new CorCMYK(0,30,40,53);
-		imagemRodovia[0][0] = new CorCMYK(100,0,100,0);
-		imagemRodovia[0][0] = new CorCMYK(0,30,40,53);
+		imagemRodovia[0][0] = CorCMYK.BROWN;
+		imagemRodovia[0][0] = CorCMYK.GREENTREE;
+		imagemRodovia[0][0] = CorCMYK.BROWN;
 		
-		imagemRodovia[0][0] = new CorCMYK(0,30,40,53);
-		imagemRodovia[0][0] = new CorCMYK(100,0,100,0);
-		imagemRodovia[0][0] = new CorCMYK(0,30,40,53);
+		imagemRodovia[0][0] = CorCMYK.BROWN;
+		imagemRodovia[0][0] = CorCMYK.GREENTREE;
+		imagemRodovia[0][0] = CorCMYK.BROWN;
 		
 		return imagemRodovia;
 	}

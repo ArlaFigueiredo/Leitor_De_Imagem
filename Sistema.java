@@ -37,13 +37,13 @@ public class Sistema{
 
     public void run(){
         for(Mapa mapa : this.atlas.getMapas())
-        	System.out.println(mapa);
+            System.out.println(mapa);
         //TODO IMPLEMENTAR A BUSCA POR SIMILARIDADE DOS MAPAS RGB ACIMA
         
         System.out.println("Mapas Similares :");
         Mapa[] mapasSimilares = this.atlas.getMapasPorLuminosidade(121,85,72,20,30);
         for(Mapa mapaSimilar : mapasSimilares)
-        	System.out.println(mapaSimilar);
+            System.out.println(mapaSimilar);
         
         //TODO IMPLEMENTAR A CONVERSÃO DOS MAPAS CMYK PARA RGB
 

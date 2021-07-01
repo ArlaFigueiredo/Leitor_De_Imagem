@@ -1,5 +1,13 @@
 #BlueJ class context
 comment0.target=MapaCMYK
-comment1.params=
-comment1.target=java.lang.String\ getCodTipo()
-numComments=2
+comment1.params=id\ descricao\ imagem
+comment1.target=MapaCMYK(java.lang.String,\ java.lang.String,\ CorCMYK[][])
+comment2.params=
+comment2.target=Cor[][]\ getImagem()
+comment3.params=posicao_altura\ posicao_largura
+comment3.target=Cor\ getPixel(int,\ int)
+comment4.params=posicao_altura\ posicao_largura\ pixel
+comment4.target=void\ setPixel(int,\ int,\ Cor)
+comment5.params=
+comment5.target=java.lang.String\ getCodTipo()
+numComments=6

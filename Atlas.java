@@ -1,4 +1,4 @@
-public class Atlas{
+ public class Atlas{
 
     private Mapa[] mapas = new Mapa[0];
     
