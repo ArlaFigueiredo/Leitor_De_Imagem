@@ -17,7 +17,7 @@ public class MapaRGB extends Mapa
     }
     
     protected Cor getPixel(int posicao_altura, int posicao_largura){
-        return this.imagem[posicao_altura][posicao_largura];
+        return (CorRGB)this.imagem[posicao_altura][posicao_largura];
     } 
     
     protected void setPixel(int posicao_altura, int posicao_largura, Cor pixel){
