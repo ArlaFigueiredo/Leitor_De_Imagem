@@ -7,9 +7,9 @@ public class ConversorCMYKToRGB implements ConversorCor{
     public Cor converter(Cor cor){
         CorCMYK corCMYK = (CorCMYK) cor;
         CorRGB pixel = new CorRGB(
-                                (int) 255 * ((1 - corCMYK.getCyan())/100) *  ((1 - corCMYK.getKey())/100),
-                                (int) 255 * ((1 - corCMYK.getMagenta())/100) *  ((1 - corCMYK.getKey())/100),
-                                (int) 255 * ((1 - corCMYK.getYellow())/100) *  ((1 - corCMYK.getKey())/100)
+                                (int) 255 * (1 - corCMYK.getCyan()) *  (1 - corCMYK.getKey()),
+                                (int) 255 * (1 - corCMYK.getMagenta()) *  (1 - corCMYK.getKey()),
+                                (int) 255 * (1 - corCMYK.getYellow()) *  (1 - corCMYK.getKey())
                             );
         return pixel;
     };  
