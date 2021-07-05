@@ -31,20 +31,18 @@ public class Sistema{
 
     public void run(){
         System.out.println(this.atlas);
-        //TODO IMPLEMENTAR A BUSCA POR SIMILARIDADE DOS MAPAS RGB ACIMA
         
         System.out.println("Mapas Similares :");
         Mapa[] mapasSimilares = this.atlas.getMapasPorLuminosidade(15,15,255,30,69);
         for(Mapa mapaSimilar : mapasSimilares)
             System.out.println(mapaSimilar);
         
-        //TODO IMPLEMENTAR A CONVERSÃO DOS MAPAS CMYK PARA RGB
         
         Conversor conversor = new Conversor();
         ConversorCMYKToRGB conversorCMYKToRGB = new ConversorCMYKToRGB();
 
         MapaRGB mapa5rgb = (MapaRGB) conversor.converter(this.atlas.getMapas()[3], conversorCMYKToRGB);
-
+        System.out.println(mapa5rgb);
     }
     
     public static void main(String[] args){
