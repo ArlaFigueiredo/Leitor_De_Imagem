@@ -1,12 +1,6 @@
 public class Sistema{
 
     private Atlas atlas;
-    private MapaRGB mapa1;
-    private MapaRGB mapa2;
-    private MapaRGB mapa3;
-    private MapaCMYK mapa4;
-    private MapaCMYK mapa5;
-    private MapaCMYK mapa6;
 
     public Sistema(){
         
@@ -17,13 +11,13 @@ public class Sistema{
         
             CaptadorDeImagens captador = new CaptadorDeImagens();
             
-            mapa1 = new MapaRGB("EST01","Estrada da Lama",captador.captaEstrada());
-            mapa2 = new MapaRGB("PNT68","Ponte Rio São Francisco",captador.captaPonte());
-            mapa3 = new MapaRGB("FLR90","Floresta Amazônia",captador.captaFloresta());
+            MapaRGB mapa1 = new MapaRGB("EST01","Estrada da Lama",captador.captaEstrada());
+            MapaRGB mapa2 = new MapaRGB("PNT68","Ponte Rio São Francisco",captador.captaPonte());
+            MapaRGB mapa3 = new MapaRGB("FLR90","Floresta Amazônia",captador.captaFloresta());
           
-            mapa4 = new MapaCMYK("PRT45","Porto Rio Douro",captador.captaPorto());
-            mapa5 = new MapaCMYK("PRA89","Praia do Forte",captador.captaPraia());
-            mapa6 = new MapaCMYK("RDV03","Rodovia 324",captador.captaRodovia());
+            MapaCMYK mapa4 = new MapaCMYK("PRT45","Porto Rio Douro",captador.captaPorto());
+            MapaCMYK mapa5 = new MapaCMYK("PRA89","Praia do Forte",captador.captaPraia());
+            MapaCMYK mapa6 = new MapaCMYK("RDV03","Rodovia 324",captador.captaRodovia());
            
             
             this.atlas.adicionaMapa(mapa1);
@@ -49,6 +43,8 @@ public class Sistema{
 
         Conversor conversor = new Conversor();
         ConversorCMYKToRGB conversorCMYKToRGB = new ConversorCMYKToRGB();
+        
+        MapaCMYK mapa5 = new MapaCMYK("PRA89","Praia do Forte",captador.captaPraia());
 
         MapaRGB mapa5rgb = (MapaRGB) conversor.converter(mapa5, conversorCMYKToRGB);
 
