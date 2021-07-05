@@ -33,7 +33,7 @@ public abstract class Mapa{
         return this.getAltura() * this.getLargura();
     }
     
-    public double getPercentualPixelsSimilares(CorRGB cor, double limiarLuminosidade){
+    public double getPercentualPixelsSimilares(Cor cor, double limiarLuminosidade){
 
         int pixelsSimilares = 0;
         int luminosidadeMaxima =(int) (cor.getLuminosidade() + (cor.getLuminosidade()*limiarLuminosidade/100));
@@ -48,9 +48,7 @@ public abstract class Mapa{
           } 
         }
         
-        
         return (double) pixelsSimilares/this.getArea() * 100;
-
     }
 
     public String toString(){
