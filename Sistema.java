@@ -40,8 +40,10 @@ public class Sistema{
         
         Conversor conversor = new Conversor();
         ConversorCMYKToRGB conversorCMYKToRGB = new ConversorCMYKToRGB();
-
+        
+        
         MapaRGB mapa5rgb = (MapaRGB) conversor.converter(this.atlas.getMapas()[3], conversorCMYKToRGB);
+        System.out.println("Cópia do mapa 5:");
         System.out.println(mapa5rgb);
     }
     
