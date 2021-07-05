@@ -36,14 +36,14 @@ public abstract class Mapa{
     public double getPercentualPixelsSimilares(CorRGB cor, double limiarLuminosidade){
 
         int pixelsSimilares = 0;
-        int similaridadeMaxima =(int) (cor.getLuminosidade() + (cor.getLuminosidade()*limiarLuminosidade/100));
-        int similaridadeMinima =(int) (cor.getLuminosidade() - (cor.getLuminosidade()*limiarLuminosidade/100));
+        int luminosidadeMaxima =(int) (cor.getLuminosidade() + (cor.getLuminosidade()*limiarLuminosidade/100));
+        int luminosidadeMinima =(int) (cor.getLuminosidade() - (cor.getLuminosidade()*limiarLuminosidade/100));
         
         
         for(int x = 0; x < this.getAltura(); x++) {
           for(int y = 0; y < this.getLargura(); y++){
             int luminosidade = this.getPixel(x, y).getLuminosidade();
-            if(luminosidade <= similaridadeMaxima && luminosidade >= similaridadeMinima)
+            if(luminosidade <= luminosidadeMaxima && luminosidade >= luminosidadeMinima)
                 pixelsSimilares = pixelsSimilares + 1;
           } 
         }

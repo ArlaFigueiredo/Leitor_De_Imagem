@@ -35,7 +35,7 @@ public class Sistema{
         //TODO IMPLEMENTAR A BUSCA POR SIMILARIDADE DOS MAPAS RGB ACIMA
         
         System.out.println("Mapas Similares :");
-        Mapa[] mapasSimilares = this.atlas.getMapasPorLuminosidade(121,85,72,20,30);
+        Mapa[] mapasSimilares = this.atlas.getMapasPorLuminosidade(15,15,255,30,69);
         for(Mapa mapaSimilar : mapasSimilares)
             System.out.println(mapaSimilar);
         
@@ -43,10 +43,8 @@ public class Sistema{
 
         Conversor conversor = new Conversor();
         ConversorCMYKToRGB conversorCMYKToRGB = new ConversorCMYKToRGB();
-        
-        MapaCMYK mapa5 = new MapaCMYK("PRA89","Praia do Forte",captador.captaPraia());
 
-        MapaRGB mapa5rgb = (MapaRGB) conversor.converter(mapa5, conversorCMYKToRGB);
+        MapaRGB mapa5rgb = (MapaRGB) conversor.converter(this.atlas.getMapas()[3], conversorCMYKToRGB);
 
     }
     
