@@ -4,13 +4,17 @@ public class Conversor {
 
         Mapa novo = conversor.getNovoMapa(mapa.getAltura(), mapa.getLargura());
         
-        for(int contAlt = 0; contAlt < mapa.getAltura(); contAlt++)
+        for(int contAlt = 0; contAlt < mapa.getAltura(); contAlt++){
             for(int contLarg = 0; contLarg < mapa.getLargura(); contLarg++){
                 Cor cor = mapa.getPixel(contAlt, contLarg);
                 Cor novaCor = conversor.converter(cor);
                 novo.setPixel(contAlt, contLarg, novaCor);
             }
-
+        }
+        
+                
+        novo.setDescricao(mapa.getDescricao());
+        novo.setId("[Cópia] "+ mapa.getId());
         return novo;
     }
 }

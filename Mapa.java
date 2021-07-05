@@ -21,6 +21,14 @@ public abstract class Mapa{
         return this.descricao;
     }
     
+    public void setDescricao(String descricao){
+        this.descricao = descricao;
+    }
+    
+    public void setId(String id){
+        this.id = id;
+    }
+    
     public int getAltura(){
         return this.getImagem().length;
     }  
