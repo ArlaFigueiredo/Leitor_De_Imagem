@@ -1,5 +1,11 @@
 package sistema.model.convert;
 
+import sistema.model.Mapa;
+import sistema.model.MapaRGB;
+import sistema.model.entity.Cor;
+import sistema.model.entity.CorCMYK;
+import sistema.model.entity.CorRGB;
+
 public class ConversorCMYKToRGB implements ConversorCor{
     
     public Mapa getNovoMapa(int altura, int largura){

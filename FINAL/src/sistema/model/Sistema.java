@@ -1,5 +1,8 @@
 package sistema.model;
 
+import sistema.model.convert.Conversor;
+import sistema.model.convert.ConversorCMYKToRGB;
+
 public class Sistema{
 
 	private Atlas atlas;

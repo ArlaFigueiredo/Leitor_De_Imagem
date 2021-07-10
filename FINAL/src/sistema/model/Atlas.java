@@ -1,5 +1,7 @@
 package sistema.model;
 
+import sistema.model.entity.CorRGB;
+
 public class Atlas{
 
     private Mapa[] mapas = new Mapa[0];

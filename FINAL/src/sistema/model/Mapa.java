@@ -1,5 +1,7 @@
 package sistema.model;
 
+import sistema.model.entity.Cor;
+
 public abstract class Mapa{
     
     private String id;
@@ -10,9 +12,9 @@ public abstract class Mapa{
         this.descricao = descricao;
     }; 
     
-    protected abstract Cor getPixel(int posicao_altura, int posicao_largura); 
-    protected abstract void setPixel(int posicao_altura, int posicao_largura, Cor pixel);
-    protected abstract Cor[][] getImagem();
+    public abstract Cor getPixel(int posicao_altura, int posicao_largura); 
+    public abstract void setPixel(int posicao_altura, int posicao_largura, Cor pixel);
+    public abstract Cor[][] getImagem();
     public abstract String getCodTipo();
 
     public String getId(){

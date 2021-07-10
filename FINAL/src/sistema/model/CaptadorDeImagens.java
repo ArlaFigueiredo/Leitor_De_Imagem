@@ -1,5 +1,8 @@
 package sistema.model;
 
+import sistema.model.entity.CorCMYK;
+import sistema.model.entity.CorRGB;
+
 public class CaptadorDeImagens {
     
     

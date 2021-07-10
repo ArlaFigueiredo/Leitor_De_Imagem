@@ -1,5 +1,8 @@
 package sistema.model.convert;
 
+import sistema.model.Mapa;
+import sistema.model.entity.Cor;
+
 public class Conversor {
 
     public Mapa converter(Mapa mapa, ConversorCor conversor){
