@@ -2,12 +2,12 @@ package sistema.model.entity;
 
 public class CorRGB extends Cor
 {
-    public static final CorRGB PRETA = new CorRGB(0,0,0);
-    public static final CorRGB BRANCA = new CorRGB(255,255,255);
-    public static final CorRGB RED = new CorRGB(255,0,0);
-    public static final CorRGB GREEN = new CorRGB(0,255,0);
-    public static final CorRGB BLUE = new CorRGB(0,0,255);
-    public static final CorRGB BROWN = new CorRGB(121,85,72);
+    public static final CorRGB PRETA = new CorRGB(null, null, null, 0,0,0);
+    public static final CorRGB BRANCA = new CorRGB(null, null, null, 255,255,255);
+    public static final CorRGB RED = new CorRGB(null, null, null, 255,0,0);
+    public static final CorRGB GREEN = new CorRGB(null, null, null, 0,255,0);
+    public static final CorRGB BLUE = new CorRGB(null, null, null, 0,0,255);
+    public static final CorRGB BROWN = new CorRGB(null, null, null, 121,85,72);
         
     private int red;
     private int green;
@@ -15,14 +15,16 @@ public class CorRGB extends Cor
 
 
     public CorRGB(){
-        this(0,0,0);
+        this(null, null, null, 0, 0, 0);
     }
     
-    public CorRGB (int red, int green, int blue){
+    public CorRGB (String id, String simbolo, String nome, int red, int green, int blue){
+    	super (id, simbolo, nome);
         this.setRed(red);
         this.setGreen(green);
         this.setBlue(blue);
     }
+ 
     
     public int getRed(){
         return this.red;
