@@ -1,3 +1,5 @@
+package sistema.model;
+
 public class Sistema{
 
 	private Atlas atlas;
@@ -12,8 +14,8 @@ public class Sistema{
             CaptadorDeImagens captador = new CaptadorDeImagens();
             
             MapaRGB mapa1 = new MapaRGB("EST01","Estrada da Lama",captador.captaEstrada());
-            MapaRGB mapa2 = new MapaRGB("PNT68","Ponte Rio São Francisco",captador.captaPonte());
-            MapaRGB mapa3 = new MapaRGB("FLR90","Floresta Amazônia",captador.captaFloresta());
+            MapaRGB mapa2 = new MapaRGB("PNT68","Ponte Rio Sï¿½o Francisco",captador.captaPonte());
+            MapaRGB mapa3 = new MapaRGB("FLR90","Floresta Amazï¿½nia",captador.captaFloresta());
           
             MapaCMYK mapa4 = new MapaCMYK("PRT45","Porto Rio Douro",captador.captaPorto());
             MapaCMYK mapa5 = new MapaCMYK("PRA89","Praia do Forte",captador.captaPraia());
@@ -43,7 +45,7 @@ public class Sistema{
         
         
         MapaRGB mapa5rgb = (MapaRGB) conversor.converter(this.atlas.getMapas()[3], conversorCMYKToRGB);
-        System.out.println("Cópia do mapa 5:");
+        System.out.println("Cï¿½pia do mapa 5:");
         System.out.println(mapa5rgb);
     }
     

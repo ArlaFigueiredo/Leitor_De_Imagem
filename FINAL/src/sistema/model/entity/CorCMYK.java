@@ -1,3 +1,5 @@
+package sistema.model.entity;
+
 public class CorCMYK extends Cor
 {
     public static final CorCMYK PRETA = new CorCMYK(0,0,0,1);

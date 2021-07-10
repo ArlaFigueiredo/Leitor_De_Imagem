@@ -1,3 +1,5 @@
+package sistema.model;
+
 public class CaptadorDeImagens {
     
     

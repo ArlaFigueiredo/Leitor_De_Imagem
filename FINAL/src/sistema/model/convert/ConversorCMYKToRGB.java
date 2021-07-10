@@ -1,3 +1,5 @@
+package sistema.model.convert;
+
 public class ConversorCMYKToRGB implements ConversorCor{
     
     public Mapa getNovoMapa(int altura, int largura){

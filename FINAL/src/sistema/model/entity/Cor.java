@@ -1,3 +1,5 @@
+package sistema.model.entity;
+
 public abstract class Cor{
     
     public abstract int getLuminosidade();

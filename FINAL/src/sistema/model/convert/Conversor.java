@@ -1,3 +1,5 @@
+package sistema.model.convert;
+
 public class Conversor {
 
     public Mapa converter(Mapa mapa, ConversorCor conversor){
@@ -14,7 +16,7 @@ public class Conversor {
         
                 
         novo.setDescricao(mapa.getDescricao());
-        novo.setId("[Cópia] "+ mapa.getId());
+        novo.setId("[Cï¿½pia] "+ mapa.getId());
         return novo;
     }
 }

@@ -1,3 +1,5 @@
+package sistema.model.entity;
+
 public class CorRGB extends Cor
 {
     public static final CorRGB PRETA = new CorRGB(0,0,0);

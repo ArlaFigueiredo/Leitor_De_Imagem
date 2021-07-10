@@ -1,3 +1,5 @@
+package sistema.model;
+
 public abstract class Mapa{
     
     private String id;

@@ -1,3 +1,5 @@
+package sistema.model;
+
 public class MapaRGB extends Mapa
 {
     private CorRGB[][] imagem;
