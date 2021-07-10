@@ -38,7 +38,8 @@ public class CorDAOSQL implements CorDAOIF{
 			");"
 			
 	private static final String COR_INSERT = "INSERT INTO cor(id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	private static final String COR_SELECT_BYNAME = "SELECT id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor FROM cor WHERE nome = ?";
+	private static final String COR_SELECT_BY_NAME = "SELECT id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor FROM cor WHERE nome = ?";
+	private static final String COR_SELECT_BY_SIMBOLO = "SELECT id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor FROM cor WHERE simbolo = ?";
 	
 	public CorDAOSQL() throws SQLException {
 		DriverManager.registerDriver(new org.hsqldb.jdbc.JDBCDriver());
@@ -83,7 +84,7 @@ public class CorDAOSQL implements CorDAOIF{
 	@Override
 	public Cor findByName(String nome) throws Exception {
 		Cor c = null;
-		PreparedStatement pStmt = this.getConn().prepareStatement(COR_SELECT_BYNAME);
+		PreparedStatement pStmt = this.getConn().prepareStatement(COR_SELECT_BY_NAME);
 		pStmt.setString(1, nome);
 		ResultSet rSet = pStmt.executeQuery();
 		if(!rSet.next())
