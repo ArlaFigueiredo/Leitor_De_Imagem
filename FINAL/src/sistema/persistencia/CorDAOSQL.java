@@ -152,7 +152,7 @@ public class CorDAOSQL implements CorDAOIF{
 		return cores;
 	}
 	
-	public void createTable throws Exception {
+	public void createTable() throws Exception {
 		PreparedStatement pStmt = this.getConn().prepareStatement(CREATE_TABLE);
 		pStmt.executeUpdate();
 	}
