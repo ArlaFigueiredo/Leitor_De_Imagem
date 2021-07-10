@@ -10,4 +10,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="Sistema"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="FINAL"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="FINAL"/>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:FINAL/src/sistema}"/>
 </launchConfiguration>
