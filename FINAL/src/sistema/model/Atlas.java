@@ -35,7 +35,7 @@ public class Atlas{
         Atlas mapasSimilares = new Atlas();
        
         for(int i = 0; i < this.mapas.length; i++){
-            if(this.mapas[i].getPercentualPixelsSimilares(new CorRGB(red, green, blue),  limiarLuminosidade) >= pctMinimo){
+            if(this.mapas[i].getPercentualPixelsSimilares(new CorRGB(null,null,null,red, green, blue),  limiarLuminosidade) >= pctMinimo){
                 mapasSimilares.adicionaMapa(this.mapas[i]); 
             }
         } 

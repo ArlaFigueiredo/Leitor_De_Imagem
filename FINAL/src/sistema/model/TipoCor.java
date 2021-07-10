@@ -1,4 +1,4 @@
-package contabil.model;
+package sistema.model;
 
 public enum TipoCor{
     

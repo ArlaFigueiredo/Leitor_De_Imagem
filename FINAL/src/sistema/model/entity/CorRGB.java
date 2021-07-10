@@ -64,4 +64,8 @@ public class CorRGB extends Cor
         return num;
     }
     
+    public String toString() {
+		return this.getNome();
+    }
+    
 }
