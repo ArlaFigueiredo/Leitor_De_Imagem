@@ -36,7 +36,6 @@ public class CorDAOSQL implements CorDAOIF{
 			"   formato_cor INT,\n" + 
 			"   PRIMARY KEY (id) \n" + 
 			");";
-			
 	private static final String COR_INSERT = "INSERT INTO cor(id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String COR_SELECT_BY_NAME = "SELECT id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor FROM cor WHERE nome = ?";
 	private static final String COR_SELECT_BY_SIMBOLO = "SELECT id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor FROM cor WHERE simbolo = ?";
@@ -152,15 +151,17 @@ public class CorDAOSQL implements CorDAOIF{
 		}
 		return cores;
 	}
-
-	public static void main(String[] args) throws Exception {
-		//PreparedStatement pStmt = conn.prepareStatement(CREATE_TABLE);
-		//pStmt.executeUpdate();
-		Collection<Cor> minhasCores = new HashSet<Cor>();
-		
-		CorDAOSQL cor = new CorDAOSQL();
-		minhasCores = cor.findBySimbolo("FLORESTA");
-		System.out.println(minhasCores);
-	}
 	
+	public void createTable throws Exception {
+		PreparedStatement pStmt = this.getConn().prepareStatement(CREATE_TABLE);
+		pStmt.executeUpdate();
+	}
+
+	//public static void main(String[] args) throws Exception {
+		
+		//Collection<Cor> minhasCores = new HashSet<Cor>();
+		//CorDAOSQL cor = new CorDAOSQL();
+		//minhasCores = cor.findBySimbolo("FLORESTA");
+		//System.out.println(minhasCores);
+	//}
 }
