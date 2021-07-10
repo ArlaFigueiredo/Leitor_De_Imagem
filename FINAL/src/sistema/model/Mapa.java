@@ -1,10 +1,22 @@
 package sistema.model;
 
+import java.io.Serializable;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+
 import sistema.model.entity.Cor;
 
-public abstract class Mapa{
+public abstract class Mapa implements Serializable{
     
-    private String id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String id;
     private String descricao;
     
     public Mapa(String id, String descricao){
@@ -65,5 +77,7 @@ public abstract class Mapa{
 
     public String toString(){
         return "Mapa [" + this.getId() + "] " + this.getDescricao() + " - Formato *" + this.getCodTipo();
-    }   
+    }
+    
+    
 }

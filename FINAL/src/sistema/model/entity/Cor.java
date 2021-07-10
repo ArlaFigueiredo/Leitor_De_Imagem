@@ -1,7 +1,13 @@
 package sistema.model.entity;
 
-public abstract class Cor{
+import java.io.Serializable;
+
+public abstract class Cor implements Serializable{
  
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private String simbolo;
 	private String nome;

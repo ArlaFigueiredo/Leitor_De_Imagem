@@ -3,10 +3,9 @@ package sistema.model;
 import sistema.model.entity.CorCMYK;
 import sistema.model.entity.CorRGB;
 
-public class CaptadorDeImagens {
+public class CaptadorDeImagens{
     
-    
-    public CorRGB[][] captaEstrada() {
+	public CorRGB[][] captaEstrada() {
         
         CorRGB [][] imagemEstrada = new CorRGB[5][5];
         
@@ -199,4 +198,5 @@ public class CaptadorDeImagens {
         
         return imagemRodovia;
     }
+    
 }
