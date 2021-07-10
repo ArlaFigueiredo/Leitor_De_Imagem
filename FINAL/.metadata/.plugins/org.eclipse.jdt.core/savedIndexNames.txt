@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\zelia\eclipse-workspace\Leitor_De_Imagem\FINAL\.metadata\.plugins\org.eclipse.jdt.core
+388825156.index
+3183371769.index
