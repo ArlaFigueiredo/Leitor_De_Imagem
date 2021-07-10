@@ -6,7 +6,7 @@ import sistema.persistencia.CorDAOSQL;
 
 public class InclusorDeCores {
     
-    public void populandoTableaCores(){
+    public void populandoTabelaCores(){
     	CorDAOSQL corDAO = new CorDAOSQL();
     	
     	corDAO.inserir(new CorRGB("V01", "FLORESTA","VERDE ESCURO", 36, 79, 20));
