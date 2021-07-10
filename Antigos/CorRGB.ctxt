@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=CorRGB
+comment1.params=
+comment1.target=CorRGB()
+comment10.params=num
+comment10.target=int\ verificaRGB(int)
+comment11.params=no
+comment11.target=boolean\ equals(CorRGB)
+comment2.params=red\ green\ blue
+comment2.target=CorRGB(int,\ int,\ int)
+comment3.params=
+comment3.target=int\ getRed()
+comment4.params=
+comment4.target=int\ getGreen()
+comment5.params=
+comment5.target=int\ getBlue()
+comment6.params=red
+comment6.target=void\ setRed(int)
+comment7.params=green
+comment7.target=void\ setGreen(int)
+comment8.params=blue
+comment8.target=void\ setBlue(int)
+comment9.params=
+comment9.target=int\ getLuminosidade()
+numComments=12
