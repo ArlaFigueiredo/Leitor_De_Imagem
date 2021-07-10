@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 
@@ -14,13 +15,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JFileChooser;
 
 import sistema.model.Sistema;
-import sistema.model.SistemaLogicaIF;
+//import sistema.model.SistemaLogicaIF;
 
 public class JSistemaUI extends JFrame implements ActionListener{
 	
-	private SistemaLogicaIF logica;
+	//private SistemaLogicaIF logica;
 	private Collection<String> elementos;
 	
 	private JButton btnAnalisar;
@@ -28,16 +30,18 @@ public class JSistemaUI extends JFrame implements ActionListener{
 	private String[] elementosStrings = { "Floresta", "Aguas e Charcos", "Area Proibida", "Zona Constuida", "Area Publica" };
 	private JComboBox elementoList = new JComboBox(this.elementosStrings);
 	
-	public JContabilUI() throws Exception {
+	/*
+	public JSistemaUI() throws Exception {
 		this.logica = new Sistema();
 		//this.nomeElementos = this.logica.getNomeElementos();
 	}
-	
+	*/
 	protected void montar() {
 		JPanel jPanelCenter = new JPanel();
 		JPanel jPanelSouth = new JPanel();
 		this.btnAnalisar = new JButton("Analisar"); 
 		this.btnAnalisar.addActionListener(this);
+		
 		
 		//Montando o panel na area sul onde vai ancorar o botão
 		jPanelSouth.setLayout(new GridLayout(2, 3));
@@ -47,7 +51,16 @@ public class JSistemaUI extends JFrame implements ActionListener{
 		jPanelSouth.add(new JPanel());
 		jPanelSouth.add(btnAnalisar);
 		jPanelSouth.add(new JPanel());
-
+		
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+		int result = fileChooser.showOpenDialog(this);
+		if (result == JFileChooser.APPROVE_OPTION) {
+		    File selectedFile = fileChooser.getSelectedFile();
+		    System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+		}
+		
+		
 		//Montando a area central com os campos (Labels e Texts)
 		jPanelCenter.setLayout(new GridLayout(1, 2));
 		jPanelCenter.add(new JLabel("Selecione o tipo de elemento:"));
@@ -72,6 +85,11 @@ public class JSistemaUI extends JFrame implements ActionListener{
 	
 	public static void main(String[] args) throws Exception {
 		(new JSistemaUI()).run();  
+	}
+
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}	
 	
 }
