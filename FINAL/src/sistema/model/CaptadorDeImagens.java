@@ -2,201 +2,191 @@ package sistema.model;
 
 import sistema.model.entity.CorCMYK;
 import sistema.model.entity.CorRGB;
-
 public class CaptadorDeImagens{
     
-	public CorRGB[][] captaEstrada() {
-        
-        CorRGB [][] imagemEstrada = new CorRGB[5][5];
+	private CorDAOSQL cor = new CorDAOSQL()
+	
+	public CorRGB[][] captaSalvador() {
+
+        CorRGB [][] imagemSalvador = new CorRGB[5][5];
         
         for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-                imagemEstrada[i][j]= CorRGB.GREEN;
+                imagemSalvador[i][j]= cor.findByName("VERDE DENSO");
             }
         }
         
-        imagemEstrada[0][1] = CorRGB.BROWN;
-        imagemEstrada[1][1] = CorRGB.BLUE;
-        imagemEstrada[2][1] = CorRGB.BLUE;
-        imagemEstrada[3][1] = CorRGB.BLUE;
-        imagemEstrada[4][1] = CorRGB.BLUE;
+        imagemSalvador[0][1] = cor.findByName("VERDE MEDIO");
+        imagemSalvador[1][1] = cor.findByName("VERDE MEDIO");
+        imagemSalvador[2][1] = cor.findByName("VERDE MEDIO");
+        imagemSalvador[3][1] = cor.findByName("VERDE MEDIO");
+        imagemSalvador[4][1] = cor.findByName("VERDE MEDIO");
         
-        imagemEstrada[0][3] = CorRGB.BLUE;
-        imagemEstrada[1][3] = CorRGB.BLUE;
-        imagemEstrada[2][3] = CorRGB.BLUE;
-        imagemEstrada[3][3] = CorRGB.BLUE;
-        imagemEstrada[4][3] = CorRGB.BROWN;
+        imagemSalvador[0][3] = cor.findByName("AZUL MAR");
+        imagemSalvador[1][3] = cor.findByName("AZUL MAR");
+        imagemSalvador[2][3] = cor.findByName("AZUL RIO");
+        imagemSalvador[3][3] = cor.findByName("AZUL RIO");
+        imagemSalvador[4][3] = cor.findByName("AZUL MANGUE");
         
-        return imagemEstrada;
+        return imagemSalvador;
     }
     
     
-    public CorRGB[][] captaPonte() {
-        CorRGB [][] imagemPonte = new CorRGB[5][5];
+    public CorRGB[][] captaCuritiba() {
+        CorRGB [][] imagemCuritiba = new CorRGB[5][5];
         
         for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-                imagemPonte[i][j]= CorRGB.BLUE;
+                imagemCuritiba[i][j]= cor.findByName("CINZA VIADUTO");
             }
         }
         
-        imagemPonte[2][0] = CorRGB.BROWN;
-        imagemPonte[2][1] = CorRGB.BROWN;
-        imagemPonte[2][2] = CorRGB.BROWN;
-        imagemPonte[2][3] = CorRGB.BROWN;
-        imagemPonte[2][4] = CorRGB.BROWN;
+        imagemCuritiba[2][0] = cor.findByName("MARROM EDIFICIOS");
+        imagemCuritiba[2][1] = cor.findByName("MARROM EDIFICIOS");
+        imagemCuritiba[2][2] = cor.findByName("MARROM EDIFICIOS");
+        imagemCuritiba[2][3] = cor.findByName("ROXO ESTRADA");
+        imagemCuritiba[2][4] = cor.findByName("ROXO ESTRADA");
         
-        imagemPonte[0][0] = CorRGB.GREEN;
-        imagemPonte[1][0] = CorRGB.GREEN;
-        imagemPonte[3][0] = CorRGB.GREEN;
-        imagemPonte[4][0] = CorRGB.GREEN;
+        imagemCuritiba[0][0] = cor.findByName("VERMELHO ISOLAMENTO");
+        imagemCuritiba[1][0] = cor.findByName("VERMELHO ISOLAMENTO");
+        imagemCuritiba[3][0] = cor.findByName("VERMELHO ISOLAMENTO");
+        imagemCuritiba[4][0] = cor.findByName("VERMELHO ISOLAMENTO");
         
-        imagemPonte[0][4] = CorRGB.GREEN;
-        imagemPonte[1][4] = CorRGB.GREEN;
-        imagemPonte[3][4] = CorRGB.GREEN;
-        imagemPonte[4][4] = CorRGB.GREEN;
+        imagemCuritiba[0][4] = cor.findByName("AZUL RIO");
+        imagemCuritiba[1][4] = cor.findByName("ROXO MONUMENTO");
+        imagemCuritiba[3][4] = cor.findByName("ROXO MONUMENTO");
+        imagemCuritiba[4][4] = cor.findByName("VERDE JARDIM");
 
-        return imagemPonte;
+        return imagemCuritiba;
     }
     
-    public CorRGB[][] captaFloresta() {
+    public CorRGB[][] captaBrasilia() {
         
-        CorRGB [][] imagemFloresta = new CorRGB[5][5];
+        CorRGB [][] imagemBrasilia = new CorRGB[5][5];
 
         
         for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-                imagemFloresta[i][j]= CorRGB.GREEN;
+                imagemBrasilia[i][j]= cor.findByName("VERDE JARDIM");
             }
         }
         
-        imagemFloresta[1][0] = CorRGB.BROWN;
-        imagemFloresta[3][0] = CorRGB.BROWN;
+        imagemBrasilia[1][0] = cor.findByName("ROXO MONUMENTO");
+        imagemBrasilia[3][0] = cor.findByName("ROXO MONUMENTO");
 
-        imagemFloresta[1][2] = CorRGB.BROWN;
-        imagemFloresta[3][2] = CorRGB.BROWN;
+        imagemBrasilia[1][2] = cor.findByName("VERMELHO ISOLAMENTO");
+        imagemBrasilia[3][2] = cor.findByName("VERMELHO ISOLAMENTO");
         
-        imagemFloresta[1][4] = CorRGB.BROWN;
-        imagemFloresta[3][4] = CorRGB.BROWN;
+        imagemBrasilia[1][4] = cor.findByName("MARROM EDIFICIOS");
+        imagemBrasilia[3][4] = cor.findByName("MARROM EDIFICIOS");
+        imagemBrasilia[0][1] = cor.findByName("MARROM EDIFICIOS");
+        imagemBrasilia[2][1] = cor.findByName("MARROM EDIFICIOS");
+        imagemBrasilia[4][1] = cor.findByName("MARROM EDIFICIOS");
+        imagemBrasilia[0][3] = cor.findByName("MARROM EDIFICIOS");
+        imagemBrasilia[2][3] = cor.findByName("MARROM EDIFICIOS");
+        imagemBrasilia[4][3] = cor.findByName("MARROM EDIFICIOS");
         
-        imagemFloresta[0][1] = CorRGB.BROWN;
-        imagemFloresta[2][1] = CorRGB.BROWN;
-        imagemFloresta[4][1] = CorRGB.BROWN;
-        
-        imagemFloresta[0][3] = CorRGB.BROWN;
-        imagemFloresta[2][3] = CorRGB.BROWN;
-        imagemFloresta[4][3] = CorRGB.BROWN;
-        
-        return imagemFloresta;
-    }
-    
-    
-    
-    public CorCMYK[][] captaPorto(){
-        CorCMYK[][] imagemPorto = new CorCMYK[5][5];
-        
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 5; j++){
-                imagemPorto[i][j] = CorCMYK.BROWN;
-            }
-        }
-        
-        imagemPorto[0][0] = CorCMYK.GREENTREE;
-        imagemPorto[1][0] = CorCMYK.GREENTREE;
-        imagemPorto[2][0] = CorCMYK.YELLOWSAND;
-        
-        imagemPorto[0][2] = CorCMYK.GREENTREE;
-        imagemPorto[1][2] = CorCMYK.GREENTREE;
-        imagemPorto[2][2] = CorCMYK.YELLOWSAND;
-        
-        imagemPorto[0][4] = CorCMYK.GREENTREE;
-        imagemPorto[1][4] = CorCMYK.GREENTREE;
-        imagemPorto[2][4] = CorCMYK.YELLOWSAND;
-
-        
-        imagemPorto[0][1] = CorCMYK.GREENTREE;
-        imagemPorto[3][1] = CorCMYK.BLUEWATER;
-        imagemPorto[4][1] = CorCMYK.BLUEWATER;
-        
-        imagemPorto[0][3] = CorCMYK.GREENTREE;
-        imagemPorto[3][3] = CorCMYK.BLUEWATER;
-        imagemPorto[4][3] = CorCMYK.BLUEWATER;
-        
-        return imagemPorto;
+        return imagemBrasilia;
     }
     
     
-    public CorCMYK[][] captaPraia(){
-        CorCMYK[][] imagemPraia = new CorCMYK[5][5];
+    
+    public CorCMYK[][] captaManaus(){
+        CorCMYK[][] imagemManaus = new CorCMYK[5][5];
         
         for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-                imagemPraia[i][j] = CorCMYK.YELLOWSAND;
+                imagemManaus[i][j] = cor.findByName("VERDE ESPARSO");
             }
         }
         
-        imagemPraia[0][0] = CorCMYK.GREENTREE;
-        imagemPraia[1][0] = CorCMYK.GRAY;
-        imagemPraia[2][0] = CorCMYK.GRAY;
-        imagemPraia[3][0] = CorCMYK.GREENTREE;
+        imagemManaus[0][0] = cor.findByName("AZUL PISCINA");
+        imagemManaus[1][0] = cor.findByName("AZUL PISCINA");
+        imagemManaus[2][0] = cor.findByName("AZUL PISCINA");
+        imagemManaus[0][2] = cor.findByName("AZUL PISCINA");
+        imagemManaus[1][2] = cor.findByName("AZUL PISCINA");
+        imagemManaus[2][2] = cor.findByName("AZUL PISCINA");
+        imagemManaus[0][4] = cor.findByName("AZUL PISCINA");
+        imagemManaus[1][4] = cor.findByName("AZUL PISCINA");
+        imagemManaus[2][4] = cor.findByName("AZUL PISCINA");
+
         
-        imagemPraia[0][1] = CorCMYK.GRAY;
-        imagemPraia[1][1] = CorCMYK.GRAY;
-        imagemPraia[2][1] = CorCMYK.GREENTREE;
+        imagemManaus[0][1] = cor.findByName("AZUL LAGO");
+        imagemManaus[3][1] = cor.findByName("AZUL LAGO");
+        imagemManaus[4][1] = cor.findByName("AZUL LAGO");
+        imagemManaus[0][3] = cor.findByName("VERMELHO ISOLAMENTO");
+        imagemManaus[3][3] = cor.findByName("VERMELHO ISOLAMENTO");
+        imagemManaus[4][3] = cor.findByName("CINZA PONTE");
         
-        imagemPraia[0][2] = CorCMYK.GRAY;
-        imagemPraia[1][2] = CorCMYK.GREENTREE;
-        
-        imagemPraia[0][3] = CorCMYK.GREENTREE;
-        
-        imagemPraia[2][4] = CorCMYK.BLUEWATER;
-        imagemPraia[3][4] = CorCMYK.BLUEWATER;
-        imagemPraia[4][4] = CorCMYK.BLUEWATER;
-        
-        imagemPraia[3][3] = CorCMYK.BLUEWATER;
-        imagemPraia[4][3] = CorCMYK.BLUEWATER;
-        
-        imagemPraia[4][2] = CorCMYK.BLUEWATER;
-        
-        return imagemPraia;
+        return imagemManaus;
     }
     
     
-    public CorCMYK[][] captaRodovia(){
-        
-        CorCMYK[][] imagemRodovia = new CorCMYK[5][5];
+    public CorCMYK[][] captaBelem(){
+        CorCMYK[][] imagemBelem = new CorCMYK[5][5];
         
         for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++){
-                imagemRodovia[i][j] = CorCMYK.GRAY;
+                imagemBelem[i][j] = cor.findByName("VERDE PARQUE");
             }
         }
         
-        imagemRodovia[0][0] = CorCMYK.GREENTREE;
-        imagemRodovia[1][0] = CorCMYK.BROWN;
-        imagemRodovia[2][0] = CorCMYK.GREENTREE;
+        imagemBelem[0][0] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemBelem[1][0] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemBelem[2][0] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemBelem[3][0] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemBelem[0][1] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemBelem[1][1] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemBelem[2][1] = cor.findByName("ROXO ESTACIONAMENTO");
         
-        imagemRodovia[0][2] = CorCMYK.GREENTREE;
-        imagemRodovia[1][2] = CorCMYK.BROWN;
-        imagemRodovia[2][2] = CorCMYK.GREENTREE;
+        imagemBelem[0][2] = cor.findByName("CINZA ACESSO");
+        imagemBelem[1][2] = cor.findByName("CINZA ACESSO");
+        imagemBelem[0][3] = cor.findByName("CINZA ACESSO");
+        imagemBelem[2][4] = cor.findByName("CINZA ACESSO");
+        imagemBelem[3][4] = cor.findByName("CINZA ACESSO");
+        imagemBelem[4][4] = cor.findByName("CINZA ACESSO");
         
-        imagemRodovia[0][4] = CorCMYK.GREENTREE;
-        imagemRodovia[1][4] = CorCMYK.BROWN;
-        imagemRodovia[2][4] = CorCMYK.GREENTREE;
+        imagemBelem[3][3] = cor.findByName("CINZA PONTE");
+        imagemBelem[4][3] = cor.findByName("CINZA PONTE");
         
-        imagemRodovia[0][0] = CorCMYK.GREENTREE;
-        imagemRodovia[0][0] = CorCMYK.BROWN;
-        imagemRodovia[0][0] = CorCMYK.GREENTREE;
-
-        imagemRodovia[0][0] = CorCMYK.BROWN;
-        imagemRodovia[0][0] = CorCMYK.GREENTREE;
-        imagemRodovia[0][0] = CorCMYK.BROWN;
+        imagemBelem[4][2] = cor.findByName("MARROM CASA");
         
-        imagemRodovia[0][0] = CorCMYK.BROWN;
-        imagemRodovia[0][0] = CorCMYK.GREENTREE;
-        imagemRodovia[0][0] = CorCMYK.BROWN;
+        return imagemBelem;
+    }
+    
+    
+    public CorCMYK[][] captaFortaleza(){
         
-        return imagemRodovia;
+        CorCMYK[][] imagemFortaleza = new CorCMYK[5][5];
+        
+        for (int i = 0; i < 5; i++){
+            for (int j = 0; j < 5; j++){
+                imagemFortaleza[i][j] = cor.findByName("MARROM CASA");
+            }
+        }
+        
+        imagemFortaleza[0][0] = cor.findByName("CINZA PONTE");
+        imagemFortaleza[1][0] = cor.findByName("CINZA PONTE");
+        imagemFortaleza[2][0] = cor.findByName("CINZA PONTE");
+        
+        imagemFortaleza[0][2] = cor.findByName("CINZA ACESSO");
+        imagemFortaleza[1][2] = cor.findByName("CINZA ACESSO");
+        imagemFortaleza[2][2] = cor.findByName("CINZA ACESSO");
+        imagemFortaleza[0][4] = cor.findByName("CINZA ACESSO");
+        imagemFortaleza[1][4] = cor.findByName("CINZA ACESSO");
+        imagemFortaleza[2][4] = cor.findByName("CINZA ACESSO");
+        
+        imagemFortaleza[0][0] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemFortaleza[0][0] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemFortaleza[0][0] = cor.findByName("ROXO ESTACIONAMENTO");
+        imagemFortaleza[0][0] = cor.findByName("VERDE PARQUE");
+        imagemFortaleza[0][0] = cor.findByName("VERDE PARQUE");
+        imagemFortaleza[0][0] = cor.findByName("VERDE PARQUE");
+        imagemFortaleza[0][0] = cor.findByName("VERDE PARQUE");
+        imagemFortaleza[0][0] = cor.findByName("VERDE PARQUE");
+        imagemFortaleza[0][0] = cor.findByName("VERDE PARQUE");
+        
+        return imagemFortaleza;
     }
     
 }
