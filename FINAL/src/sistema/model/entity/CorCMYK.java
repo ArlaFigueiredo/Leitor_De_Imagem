@@ -1,5 +1,7 @@
 package sistema.model.entity;
 
+import sistema.model.entity.Simbolo;
+
 public class CorCMYK extends Cor
 {
     public static final CorCMYK PRETA = new CorCMYK(0,0,0,1);
@@ -25,7 +27,7 @@ public class CorCMYK extends Cor
     }
     
     
-    public CorCMYK (String id, String simbolo, String nome, int cyan, int magenta, int yellow, int key){
+    public CorCMYK (String id, Simbolo simbolo, String nome, int cyan, int magenta, int yellow, int key){
     	super (id, simbolo, nome);
     	this.setCyan(cyan);
         this.setMagenta(magenta);

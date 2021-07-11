@@ -1,18 +1,16 @@
 package sistema.model.entity;
 
 import java.io.Serializable;
+import sistema.model.entity.Simbolo;
 
 public abstract class Cor implements Serializable{
  
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String id;
-	private String simbolo;
+	private Simbolo simbolo;
 	private String nome;
 	
-    public Cor(String id, String simbolo, String nome){
+    public Cor(String id, Simbolo simbolo, String nome){
         this.setId(id);
         this.setSimbolo(simbolo);
         this.setNome(nome);
@@ -24,7 +22,7 @@ public abstract class Cor implements Serializable{
     	this.id = id; 
     }
     
-    private void setSimbolo(String simbolo){ 
+    private void setSimbolo(Simbolo simbolo){ 
     	this.simbolo = simbolo; 
     }
     
@@ -36,7 +34,7 @@ public abstract class Cor implements Serializable{
 	   return this.id; 
    }
    
-   public String getSimbolo(){ 
+   public Simbolo getSimbolo(){ 
 	   return this.simbolo; 
    }
    
