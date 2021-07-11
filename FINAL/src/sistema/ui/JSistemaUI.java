@@ -69,7 +69,7 @@ public class JSistemaUI extends JFrame implements ActionListener{
 		
 		// Inclusor do caminho da imagem
 		jPanelCenter.add(new JPanel());
-		jPanelCenter.add(new JLabel("Informe o caminho da imagem:"));
+		jPanelCenter.add(new JLabel("Informe o caminho do arquivo:"));
 		jPanelCenter.add(this.txtCaminho);
 		jPanelCenter.add(btnBrowser);
 		
