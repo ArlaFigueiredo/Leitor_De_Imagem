@@ -6,19 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 import sistema.model.entity.Simbolo;
 import sistema.model.exception.SimboloInexistenteException;
 
-public class SimboloDAOSQL implements SimboloDAOIF{
+public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 
-	private static final String URI = "jdbc:hsqldb:hsql://localhost/";
-	private static final String USER = "SA";
-	private static final String PWD = "";
-	
 	private static final String CREATE_TABLE = "CREATE TABLE simbolo (\n" + 
 			"   id INT NOT NULL,\n" + 
 			"   nome VARCHAR(20) NOT NULL,\n" + 
@@ -27,14 +20,6 @@ public class SimboloDAOSQL implements SimboloDAOIF{
 	private static final String SIMBOLO_INSERT = "INSERT INTO simbolo(id, nome) VALUES (?, ?)";
 	private static final String SIMBOLO_SELECT_BY_ID = "SELECT id, nome FROM simbolo WHERE id = ?";
 	private static final String SIMBOLO_SELECT_ALL = "SELECT id, nome FROM simbolo";
-	
-	public SimboloDAOSQL() throws SQLException {
-		DriverManager.registerDriver(new org.hsqldb.jdbc.JDBCDriver());
-	}
-	
-	private Connection getConn() throws SQLException {
-		return  DriverManager.getConnection(SimboloDAOSQL.URI, SimboloDAOSQL.USER, SimboloDAOSQL.PWD); 
-	}
 	
 	public void inserir(Simbolo s) throws Exception {
 		PreparedStatement pStmt = this.getConn().prepareStatement(SIMBOLO_INSERT);
