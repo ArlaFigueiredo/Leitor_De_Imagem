@@ -109,7 +109,7 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 			
 			c = new CorCMYK(id, oSimbolo, sNome, cyan, magenta, yellow, key);
 		}
-		
+
 		return c;
 	}
 	
@@ -156,14 +156,7 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 		pStmt.executeUpdate();
 	}
 
-
-	public Collection<Cor> findBySimbolo(String simbolo) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public static void main(String[] args) throws Exception {
-		
 		
 		//Collection<Cor> minhasCores = new HashSet<Cor>();
 		CorDAOSQL cor = new CorDAOSQL();

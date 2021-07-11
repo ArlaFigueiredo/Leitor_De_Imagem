@@ -18,12 +18,12 @@ public class MapaDAOFILE implements MapaDAOIF{
 			oos.close();
 	    }
 	    
-	    public Mapa ler(String caminhoArquivoMapa) throws IOException, ClassNotFoundException  {
-	    	
-	    	FileInputStream fin = new FileInputStream(caminhoArquivoMapa+".bin");
-	    	ObjectInputStream ois = new ObjectInputStream(fin);
-			Mapa mapa = (Mapa) ois.readObject();
-			ois.close();
-			return mapa;
-	    }
+    public Mapa ler(String caminhoArquivoMapa) throws IOException, ClassNotFoundException  {
+    	
+    	FileInputStream fin = new FileInputStream(caminhoArquivoMapa+".bin");
+    	ObjectInputStream ois = new ObjectInputStream(fin);
+		Mapa mapa = (Mapa) ois.readObject();
+		ois.close();
+		return mapa;
+    }
 }

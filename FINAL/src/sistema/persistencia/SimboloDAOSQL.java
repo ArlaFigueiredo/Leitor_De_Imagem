@@ -27,6 +27,7 @@ public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 			");";
 	private static final String SIMBOLO_INSERT = "INSERT INTO simbolo(id, nome) VALUES (?, ?)";
 	private static final String SIMBOLO_SELECT_BY_ID = "SELECT id, nome FROM simbolo WHERE id = ?";
+	private static final String SIMBOLO_SELECT_BY_NAME = "SELECT id, nome FROM simbolo WHERE nome = ?";
 	private static final String SIMBOLO_SELECT_ALL = "SELECT id, nome FROM simbolo";
 	
 	public void inserir(Simbolo s) throws Exception {
@@ -53,6 +54,22 @@ public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 		return s;
 	}
 	
+	public Simbolo findByName(String nome) throws Exception{
+		
+		PreparedStatement pStmt = this.getConn().prepareStatement(SIMBOLO_SELECT_BY_NAME);
+		pStmt.setString(1, nome);
+		ResultSet rSet = pStmt.executeQuery();
+		//if(!rSet.next())
+			//throw new SimboloInexistenteException(id);
+		
+		int id = rSet.getInt("id");
+		String sNome = rSet.getString("nome");
+
+		Simbolo s = new Simbolo(id, sNome);
+		
+		return s;
+	}
+	
 	
 	public Collection<Simbolo> findAll() throws Exception {
 		
@@ -64,7 +81,6 @@ public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 			String nome = rSet.getString("nome");
 			Simbolo s = new Simbolo(id, nome);
 			simbolos.add(s);
-			
 		}
 		return simbolos;
 	}
