@@ -26,6 +26,13 @@ public class CorRGB extends Cor
         this.setGreen(green);
         this.setBlue(blue);
     }
+    
+    public CorRGB(int red, int green, int blue) {
+    	super(null,null,null);
+    	this.setRed(red);
+        this.setGreen(green);
+        this.setBlue(blue);
+    }
  
     
     public int getRed(){
