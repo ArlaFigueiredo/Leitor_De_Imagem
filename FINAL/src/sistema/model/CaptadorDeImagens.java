@@ -4,7 +4,7 @@ import sistema.model.entity.CorCMYK;
 import sistema.model.entity.CorRGB;
 public class CaptadorDeImagens{
     
-	private CorDAOSQL cor = new CorDAOSQL()
+	private CorDAOSQL cor = new CorDAOSQL();
 	
 	public CorRGB[][] captaSalvador() {
 
