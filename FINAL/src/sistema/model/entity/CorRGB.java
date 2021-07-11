@@ -73,4 +73,8 @@ public class CorRGB extends Cor
         return num;
     }
     
+    public boolean equals(CorRGB no){
+        return ((this.getRed() == no.getRed()) && (this.getGreen() == no.getGreen()) && (this.getBlue() == no.getBlue()));
+    }
+    
 }

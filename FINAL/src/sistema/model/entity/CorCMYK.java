@@ -97,4 +97,9 @@ public class CorCMYK extends Cor
         return num;
     }
     
+    public boolean equals(CorCMYK cor){
+        return ((this.getCyan() == cor.getCyan()) && (this.getMagenta() == cor.getMagenta()) && (this.getYellow() == cor.getYellow()) && (this.getKey() == cor.getKey()));
+    };
+    
+    
 }

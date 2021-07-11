@@ -1,6 +1,8 @@
 package sistema.model;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashSet;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,6 +11,7 @@ import java.io.ObjectOutputStream;
 
 
 import sistema.model.entity.Cor;
+import sistema.model.entity.Simbolo;
 
 public abstract class Mapa implements Serializable{
     
@@ -57,7 +60,7 @@ public abstract class Mapa implements Serializable{
         return this.getAltura() * this.getLargura();
     }
     
-    public double getPercentualPixelsEquivaletes(Cor cor){
+    public double getPercentualPixelsEquivalentes(Cor cor){
 
         int pixelsEquivalentes = 0;
         
@@ -70,6 +73,29 @@ public abstract class Mapa implements Serializable{
         
         return (double) pixelsEquivalentes/this.getArea() * 100;
     }
+    
+    public Collection<String> getPercentualPixelsEquivalentes(Collection<Cor> cores){
+		
+    	double percentualTotal = 0.0;
+    	String resultadoBusca;
+    	Simbolo simbolo = new Simbolo(0, null);
+    	Collection<String> ConjuntosPorcentagens = new HashSet<String>();
+    	
+    	for(Cor cor : cores) {
+    		simbolo = cor.getSimbolo();
+    		double percentualPorCor = getPercentualPixelsEquivalentes(cor);
+    		percentualTotal += percentualPorCor;
+    		resultadoBusca = cor.getNome() +" : "+percentualPorCor+"\n";
+    		ConjuntosPorcentagens.add(resultadoBusca);
+    	}
+    	
+    	resultadoBusca = simbolo.getNome() +" : " +percentualTotal;
+    	ConjuntosPorcentagens.add(resultadoBusca);
+    	
+    	return ConjuntosPorcentagens;
+    }
+    
+    
 
     public String toString(){
         return "Mapa [" + this.getId() + "] " + this.getDescricao() + " - Formato *" + this.getCodTipo();

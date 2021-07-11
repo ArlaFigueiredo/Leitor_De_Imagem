@@ -163,4 +163,5 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 		Collection<Cor> minhasCores = cor.findBySimbolo(new Simbolo(2, "AGUAS E CHARCOS"));
 		System.out.println(minhasCores);
 	}
+
 }
