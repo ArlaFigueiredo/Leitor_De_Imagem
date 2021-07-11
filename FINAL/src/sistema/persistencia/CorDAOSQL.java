@@ -21,6 +21,11 @@ import sistema.persistencia.SimboloDAOSQL;
 
 public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 	
+	public CorDAOSQL() throws SQLException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private static final String CREATE_TABLE = "CREATE TABLE cor (\n" + 
 			"   id VARCHAR(50) NOT NULL,\n" + 
 			"   nome VARCHAR(20) NOT NULL,\n" + 
@@ -38,7 +43,6 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 	private static final String COR_INSERT = "INSERT INTO cor(id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String COR_SELECT_BY_NAME = "SELECT id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor FROM cor as C WHERE nome = ?";
 	private static final String COR_SELECT_BY_SIMBOLO = "SELECT id, nome, simbolo, red, green, blue, cyan, magenta, yellow, key, formato_cor FROM cor WHERE simbolo = ?";
-	private int tipo;
 	
 	public void inserir(Cor c) throws Exception {
 		PreparedStatement pStmt = this.getConn().prepareStatement(COR_INSERT);
@@ -80,8 +84,9 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 		if(!rSet.next())
 			throw new CorInexistenteException(nome);
 		
+		SimboloDAOSQL sDAO = new SimboloDAOSQL();
 		int simbolo = rSet.getInt("simbolo");
-		Simbolo oSimbolo = SimboloDAOSQL.findById(simbolo);
+		Simbolo oSimbolo = sDAO.findById(simbolo);
 		
 		String id = rSet.getString("id");
 		String sNome = rSet.getString("nome");
@@ -96,7 +101,7 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 			
 			c = new CorRGB(id, oSimbolo, sNome, red, green, blue);
 		}
-		else if(tipo == TipoCor.CorCMYK.value()){
+		else if(formato_cor == TipoCor.CorCMYK.value()){
 			int cyan = rSet.getInt("cyan");
 			int magenta = rSet.getInt("magenta");
 			int yellow = rSet.getInt("yellow");
@@ -117,10 +122,11 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 		while(rSet.next()) {
 			Cor c = null;
 			
+			SimboloDAOSQL sDAO = new SimboloDAOSQL();
 			String id = rSet.getString("id");
 			String sNome = rSet.getString("nome");
 			int iSimbolo = rSet.getInt("simbolo");
-			Simbolo oSimbolo = SimboloDAOSQL.findById(iSimbolo);
+			Simbolo oSimbolo = sDAO.findById(iSimbolo);
 			
 			int formato_cor = rSet.getInt("formato_cor");
 			
@@ -132,7 +138,7 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 				c = new CorRGB(id, oSimbolo, sNome, red, green, blue);
 				cores.add(c);
 			}
-			else if(tipo == TipoCor.CorCMYK.value()){
+			else if(formato_cor == TipoCor.CorCMYK.value()){
 				int cyan = rSet.getInt("cyan");
 				int magenta = rSet.getInt("magenta");
 				int yellow = rSet.getInt("yellow");
@@ -150,11 +156,18 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 		pStmt.executeUpdate();
 	}
 
-	//public static void main(String[] args) throws Exception {
+
+	public Collection<Cor> findBySimbolo(String simbolo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static void main(String[] args) throws Exception {
+		
 		
 		//Collection<Cor> minhasCores = new HashSet<Cor>();
-		//CorDAOSQL cor = new CorDAOSQL();
-		//minhasCores = cor.findBySimbolo("FLORESTA");
-		//System.out.println(minhasCores);
-	//}
+		CorDAOSQL cor = new CorDAOSQL();
+		Collection<Cor> minhasCores = cor.findBySimbolo(new Simbolo(2, "AGUAS E CHARCOS"));
+		System.out.println(minhasCores);
+	}
 }

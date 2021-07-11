@@ -6,11 +6,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import sistema.model.entity.Simbolo;
 import sistema.model.exception.SimboloInexistenteException;
 
 public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
+
+	public SimboloDAOSQL() throws SQLException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	private static final String CREATE_TABLE = "CREATE TABLE simbolo (\n" + 
 			"   id INT NOT NULL,\n" + 
@@ -37,7 +45,7 @@ public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 		if(!rSet.next())
 			throw new SimboloInexistenteException(id);
 		
-		String sId = rSet.getString("id");
+		int sId = rSet.getInt("id");
 		String nome = rSet.getString("nome");
 
 		Simbolo s = new Simbolo(sId, nome);
@@ -66,11 +74,13 @@ public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 		pStmt.executeUpdate();
 	}
 
-	//public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
+		
+		
 		
 		//Collection<Simbolo> simbolos = new HashSet<Simbolo>();
-		//SimboloDAOSQL s = new SimboloDAOSQL();
-		//simbolos = s.findAll();
-		//System.out.println(simbolos);
-	//}
+		SimboloDAOSQL s = new SimboloDAOSQL();
+		Collection<Simbolo> simbolos = s.findAll();
+		System.out.println(simbolos);
+	}
 }

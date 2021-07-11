@@ -35,7 +35,7 @@ public class InclusorDeCores {
 		corDAO.inserir(new CorRGB("V09", areaProibida,"VERMELHO ISOLAMENTO", 255, 0, 0));
 		corDAO.inserir(new CorCMYK("V10", areaProibida,"VERMELHO ISOLAMENTO", 0, 100, 100, 0));
 	
-		corDAO.inserir(new CorRGB("V11", zonaConstuida"CINZA VIADUTO", 109, 20, 46));
+		corDAO.inserir(new CorRGB("V11", zonaConstuida,"CINZA VIADUTO", 109, 20, 46));
 		corDAO.inserir(new CorRGB("V12", zonaConstuida,"MARROM EDIFICIOS", 178, 79, 0));
 		corDAO.inserir(new CorRGB("V13", zonaConstuida,"ROXO ESTRADA", 60, 45, 86));
 		corDAO.inserir(new CorCMYK("V14", zonaConstuida,"CINZA PONTE", 0, 0, 16, 50));
@@ -49,5 +49,15 @@ public class InclusorDeCores {
 	
 	    
     }
+    
+    public static void main(String[] args) {
+    	InclusorDeCores IDC = new InclusorDeCores();
+    	try {
+			IDC.populandoTabelaCores();
+		} catch (Exception e) {
+			System.out.println("Erro ao inserir na tabela simbolos");
+			e.printStackTrace();
+		}
+	}
 
 }

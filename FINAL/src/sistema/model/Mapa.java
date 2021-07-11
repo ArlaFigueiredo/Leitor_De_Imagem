@@ -57,22 +57,18 @@ public abstract class Mapa implements Serializable{
         return this.getAltura() * this.getLargura();
     }
     
-    public double getPercentualPixelsSimilares(Cor cor, double limiarLuminosidade){
+    public double getPercentualPixelsEquivaletes(Cor cor){
 
-        int pixelsSimilares = 0;
-        int luminosidadeMaxima =(int) (cor.getLuminosidade() + (cor.getLuminosidade()*limiarLuminosidade/100));
-        int luminosidadeMinima =(int) (cor.getLuminosidade() - (cor.getLuminosidade()*limiarLuminosidade/100));
-        
+        int pixelsEquivalentes = 0;
         
         for(int x = 0; x < this.getAltura(); x++) {
           for(int y = 0; y < this.getLargura(); y++){
-            int luminosidade = this.getPixel(x, y).getLuminosidade();
-            if(luminosidade <= luminosidadeMaxima && luminosidade >= luminosidadeMinima)
-                pixelsSimilares = pixelsSimilares + 1;
+            if( this.getPixel(x, y).equals(cor))
+            	pixelsEquivalentes++;
           } 
         }
         
-        return (double) pixelsSimilares/this.getArea() * 100;
+        return (double) pixelsEquivalentes/this.getArea() * 100;
     }
 
     public String toString(){

@@ -19,7 +19,7 @@ public class ConnectionDB {
 		DriverManager.registerDriver(new org.hsqldb.jdbc.JDBCDriver());
 	}
 	
-	private Connection getConn() throws SQLException {
+	public Connection getConn() throws SQLException {
 		return  DriverManager.getConnection(ConnectionDB.URI, ConnectionDB.USER, ConnectionDB.PWD); 
 	}
 	

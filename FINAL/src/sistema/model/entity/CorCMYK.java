@@ -96,4 +96,5 @@ public class CorCMYK extends Cor
             num = 0;
         return num;
     }
+    
 }

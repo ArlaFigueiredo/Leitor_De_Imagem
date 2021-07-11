@@ -36,11 +36,7 @@ public class Sistema{
 
     public void run(){
         System.out.println(this.atlas);
-        
-        System.out.println("Mapas Similares :");
-        Mapa[] mapasSimilares = this.atlas.getMapasPorLuminosidade(15,15,255,30,69);
-        for(Mapa mapaSimilar : mapasSimilares)
-            System.out.println(mapaSimilar);
+
         
         
         Conversor conversor = new Conversor();
