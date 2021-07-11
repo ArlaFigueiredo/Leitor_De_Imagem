@@ -58,16 +58,26 @@ public class JSistemaUI extends JFrame implements ActionListener{
 		JPanel jPanelCenter = new JPanel();
 		JPanel jPanelSouth = new JPanel();
 		
-		// Montando parte de cima
-		jPanelCenter.setLayout(new GridLayout(3, 3));
+		
+		jPanelCenter.setLayout(new GridLayout(6, 4));
+		
+		// Montando espaçamento em cima
+		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
 		
 		// Inclusor do caminho da imagem
-		jPanelCenter.add(new JLabel("Informe o caminho do arquivo para avaliação:"));
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JLabel("Informe o caminho da imagem:"));
 		jPanelCenter.add(this.txtCaminho);
 		jPanelCenter.add(btnBrowser);
+		
+		// Montando espaçamento meio
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
 		
 		
 		// Incluindo dropdown elementos
@@ -76,6 +86,17 @@ public class JSistemaUI extends JFrame implements ActionListener{
 		//this.cmbElementos = new JComboBox<String>();
 		//this.loadCombo(this.cmbElementos);
 		jPanelCenter.add(this.elementoList);
+		
+		// Montando espaçamento final
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+		
 		
 		//Montando o panel na area sul onde vai ancorar o botão
 		jPanelSouth.setLayout(new GridLayout(2, 3));
