@@ -17,7 +17,7 @@ public class MapaCMYK extends Mapa
     }
     
     public Cor getPixel(int posicao_altura, int posicao_largura){
-         return (CorCMYK)this.imagem[posicao_altura][posicao_largura];
+         return (CorCMYK) this.imagem[posicao_altura][posicao_largura];
     } 
     
     public void setPixel(int posicao_altura, int posicao_largura, Cor pixel){

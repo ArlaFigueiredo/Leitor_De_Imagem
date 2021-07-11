@@ -1,7 +1,5 @@
 package sistema.model;
 
-import java.sql.SQLException;
-
 import sistema.model.entity.CorCMYK;
 import sistema.model.entity.CorRGB;
 import sistema.persistencia.CorDAOSQL;

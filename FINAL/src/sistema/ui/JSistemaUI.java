@@ -154,9 +154,9 @@ public class JSistemaUI extends JFrame implements ActionListener{
 				Collection<String> resultado = this.logica.analisaArquivo(caminhoArquivo, elemento);
 				JOptionPane.showMessageDialog(this,
 						resultado);			
-			} catch (Exception e) {
+			} catch (Exception exc) {
 				JOptionPane.showMessageDialog(this,
-					    "Erro: " + e.getMessage(),
+					    "Erro: " + exc.getMessage(),
 					    "Erro na análise da imagem",
 					    JOptionPane.ERROR_MESSAGE);			
 			}

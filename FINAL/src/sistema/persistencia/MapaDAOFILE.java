@@ -20,7 +20,7 @@ public class MapaDAOFILE implements MapaDAOIF{
 	    
     public Mapa ler(String caminhoArquivoMapa) throws IOException, ClassNotFoundException  {
     	
-    	FileInputStream fin = new FileInputStream(caminhoArquivoMapa+".bin");
+    	FileInputStream fin = new FileInputStream(caminhoArquivoMapa);
     	ObjectInputStream ois = new ObjectInputStream(fin);
 		Mapa mapa = (Mapa) ois.readObject();
 		ois.close();

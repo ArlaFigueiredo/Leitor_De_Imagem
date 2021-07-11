@@ -4,6 +4,7 @@ import java.util.Collection;
 import sistema.model.CaptadorDeImagens;
 import sistema.model.MapaRGB;
 import sistema.model.entity.Cor;
+import sistema.model.entity.CorRGB;
 import sistema.model.entity.Simbolo;
 import sistema.persistencia.CorDAOSQL;
 
@@ -15,9 +16,10 @@ public class teste {
 		try {
 			CorDAOSQL gerenciadorDeCores = new CorDAOSQL();
 			Collection<Cor> coresFloresta = gerenciadorDeCores.findBySimbolo(new Simbolo(1, "FLORESTA"));
-			MapaRGB mapa1 = new MapaRGB("EST01","Estrada da Lama",captador.captaEstrada());
+			MapaRGB mapa1 = new MapaRGB("SSA","Salvador",captador.captaSalvador());
 			Collection<String> resultado = mapa1.getPercentualPixelsEquivalentes(coresFloresta);
-			System.out.println(resultado);
+			for(String s : resultado)
+				System.out.println(s);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -25,7 +27,6 @@ public class teste {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 	}
 

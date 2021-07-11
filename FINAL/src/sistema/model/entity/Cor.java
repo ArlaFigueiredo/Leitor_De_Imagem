@@ -17,6 +17,7 @@ public abstract class Cor implements Serializable{
     } 
 	
     public abstract int getLuminosidade();
+    public abstract boolean equals(Cor cor);
     
     private void setId(String id){ 
     	this.id = id; 

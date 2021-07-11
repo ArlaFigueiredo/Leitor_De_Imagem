@@ -3,14 +3,9 @@ package sistema.model;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
 
 import sistema.model.entity.Cor;
+import sistema.model.entity.CorRGB;
 import sistema.model.entity.Simbolo;
 
 public abstract class Mapa implements Serializable{
@@ -63,10 +58,10 @@ public abstract class Mapa implements Serializable{
     public double getPercentualPixelsEquivalentes(Cor cor){
 
         int pixelsEquivalentes = 0;
-        
+              
         for(int x = 0; x < this.getAltura(); x++) {
           for(int y = 0; y < this.getLargura(); y++){
-            if( this.getPixel(x, y).equals(cor))
+            if(this.getPixel(x, y).equals(cor))
             	pixelsEquivalentes++;
           } 
         }
@@ -85,12 +80,17 @@ public abstract class Mapa implements Serializable{
     		simbolo = cor.getSimbolo();
     		double percentualPorCor = getPercentualPixelsEquivalentes(cor);
     		percentualTotal += percentualPorCor;
-    		resultadoBusca = cor.getNome() +" : "+percentualPorCor+"\n";
-    		ConjuntosPorcentagens.add(resultadoBusca);
+    		if(percentualPorCor  > 0) {
+    			resultadoBusca = cor.getNome() +" : "+percentualPorCor+"\n";
+    			ConjuntosPorcentagens.add(resultadoBusca);
+    		}
     	}
-    	
-    	resultadoBusca = simbolo.getNome() +" : " +percentualTotal;
-    	ConjuntosPorcentagens.add(resultadoBusca);
+    	if(percentualTotal > 0) {
+    		resultadoBusca = simbolo.getNome() +" : " +percentualTotal+"\n";
+    		ConjuntosPorcentagens.add(resultadoBusca);
+    	}else {
+    		ConjuntosPorcentagens.add("Nenhuma ocorrencia do elemento");
+    	}
     	
     	return ConjuntosPorcentagens;
     }
