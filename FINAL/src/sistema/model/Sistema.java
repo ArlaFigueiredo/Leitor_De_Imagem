@@ -13,7 +13,7 @@ import sistema.persistencia.SimboloDAOSQL;
 public class Sistema implements SistemaLogicaIF{   
     
     
-    public Collection<String> AnalisaArquivo(String caminhoArquivo, String elemento) throws Exception{
+    public Collection<String> analisaArquivo(String caminhoArquivo, String elemento) throws Exception{
     	// Convertendo arquivo para objeto Mapa
     	MapaDAOFILE mapaDAO = new MapaDAOFILE();
     	Mapa mapa = mapaDAO.ler(caminhoArquivo);

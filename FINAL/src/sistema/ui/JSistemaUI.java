@@ -5,38 +5,39 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-//import java.io.IOException;
+import java.io.IOException;
 import java.util.Collection;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-//import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JFileChooser;
-
-//import sistema.model.Sistema;
-//import sistema.model.SistemaLogicaIF;
+import sistema.model.Sistema;
+import sistema.model.SistemaLogicaIF;
 
 public class JSistemaUI extends JFrame implements ActionListener{
 	
-	//private SistemaLogicaIF logica;
-	//private Collection<String> elementos;
+	private SistemaLogicaIF logica;
+	private Collection<String> nomeElementos;
 	
 	private JButton btnAnalisar;
 	private JButton btnBrowser;
-	//private JComboBox<String> cmbElementos;	
-	private JComboBox elementoList;
+	
+	private JComboBox<String> cmbElementos;
+	//private JComboBox elementoList;
+	
 	private JTextField txtCaminho;
 	
-	/*
+	
 	public JSistemaUI() throws Exception {
 		this.logica = new Sistema();
-		//this.nomeElementos = this.logica.getNomeElementos();
+		this.nomeElementos = this.logica.getElementos();
 	}
-	*/
+	
 	
 	private void initComponents(){
 		// Botoes
@@ -47,8 +48,10 @@ public class JSistemaUI extends JFrame implements ActionListener{
 		this.txtCaminho = new JTextField(); 
 		
 		// DropDown
-		String[] elementosStrings = { "Floresta", "Aguas e Charcos", "Area Proibida", "Zona Constuida", "Area Publica" };
-		this.elementoList = new JComboBox(elementosStrings);
+		//String[] elementosStrings = { "Floresta", "Aguas e Charcos", "Area Proibida", "Zona Constuida", "Area Publica" };
+		//this.elementoList = new JComboBox(elementosStrings);
+		this.cmbElementos = new JComboBox<String>();
+		this.loadCombo(this.cmbElementos);	
 		
     }
 	
@@ -83,9 +86,8 @@ public class JSistemaUI extends JFrame implements ActionListener{
 		// Incluindo dropdown elementos
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JLabel("Selecione o tipo de elemento:"));
-		//this.cmbElementos = new JComboBox<String>();
-		//this.loadCombo(this.cmbElementos);
-		jPanelCenter.add(this.elementoList);
+		jPanelCenter.add(this.cmbElementos);
+		jPanelCenter.add(new JPanel());
 		
 		// Montando espaçamento final
 		jPanelCenter.add(new JPanel());
@@ -117,6 +119,11 @@ public class JSistemaUI extends JFrame implements ActionListener{
 	}
 	
 	
+	private void loadCombo(JComboBox combo) {
+		for(String nomeElemento : this.nomeElementos)
+			combo.addItem(nomeElemento);
+	}
+	
 	protected void configEvents() {
 		this.btnAnalisar.addActionListener(this);
 		this.btnBrowser.addActionListener(this);
@@ -139,6 +146,21 @@ public class JSistemaUI extends JFrame implements ActionListener{
 			    File selectedFile = fileChooser.getSelectedFile();
 			    this.txtCaminho.setText(selectedFile.getAbsolutePath());
 			}
+		}
+		else if (e.getSource() == this.btnAnalisar){
+			try {
+				String elemento = (String) this.cmbElementos.getSelectedItem();
+				String caminhoArquivo = this.txtCaminho.getText();
+				Collection<String> resultado = this.logica.analisaArquivo(caminhoArquivo, elemento);
+				JOptionPane.showMessageDialog(this,
+						resultado);			
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(this,
+					    "Erro: " + e.getMessage(),
+					    "Erro na análise da imagem",
+					    JOptionPane.ERROR_MESSAGE);			
+			}
+			
 		}
 	}
 	
