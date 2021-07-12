@@ -16,14 +16,13 @@ import sistema.model.entity.CorCMYK;
 import sistema.model.entity.Simbolo;
 import sistema.model.TipoCor;
 import sistema.model.exception.CorInexistenteException;
-import sistema.persistencia.ConnectionDB;
+import sistema.persistencia.connection.ConnectionDB;
 import sistema.persistencia.SimboloDAOSQL;
 
 public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 	
 	public CorDAOSQL() throws SQLException {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	private static final String CREATE_TABLE = "CREATE TABLE cor (\n" + 
@@ -158,10 +157,7 @@ public class CorDAOSQL extends ConnectionDB implements CorDAOIF{
 
 	public static void main(String[] args) throws Exception {
 		
-		//Collection<Cor> minhasCores = new HashSet<Cor>();
 		CorDAOSQL cor = new CorDAOSQL();
-		Collection<Cor> minhasCores = cor.findBySimbolo(new Simbolo(2, "AGUAS E CHARCOS"));
-		System.out.println(minhasCores);
+		cor.createTable();
 	}
-
 }

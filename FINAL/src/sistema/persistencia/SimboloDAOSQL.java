@@ -12,12 +12,12 @@ import java.util.Set;
 
 import sistema.model.entity.Simbolo;
 import sistema.model.exception.SimboloInexistenteException;
+import sistema.persistencia.connection.ConnectionDB;
 
 public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 
 	public SimboloDAOSQL() throws SQLException {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	private static final String CREATE_TABLE = "CREATE TABLE simbolo (\n" + 
@@ -92,11 +92,7 @@ public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 
 	public static void main(String[] args) throws Exception {
 		
-		
-		
-		//Collection<Simbolo> simbolos = new HashSet<Simbolo>();
 		SimboloDAOSQL s = new SimboloDAOSQL();
-		Collection<Simbolo> simbolos = s.findAll();
-		System.out.println(simbolos);
+		s.createTable();
 	}
 }

@@ -1,4 +1,4 @@
-package sistema.persistencia;
+package sistema.persistencia.connection;
 
 import sistema.model.entity.Simbolo;
 
