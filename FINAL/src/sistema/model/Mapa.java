@@ -94,7 +94,8 @@ public abstract class Mapa implements Serializable{
     	
     	return ConjuntosPorcentagens;
     }
-    
+    //TODO: ANALISAR POSSIBILIDADE DE CRIAR CLASSE PARA EXIBIR O RESULTADO. 
+    // Class PercentualCor:  nome, percentual.
     
 
     public String toString(){

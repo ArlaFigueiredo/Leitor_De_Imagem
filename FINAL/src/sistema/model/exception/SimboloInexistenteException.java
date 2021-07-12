@@ -12,4 +12,6 @@ public class SimboloInexistenteException extends Exception {
 	public int idSimbolo() {
 		return this.idSimbolo;
 	}
+	
+	//TODO: INCLUIR EXCEPTION PARA BUSCA PELO NOME.
 }	

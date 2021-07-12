@@ -191,4 +191,6 @@ public class CaptadorDeImagens   {
         return imagemFortaleza;
     }
     
+    //TODO: INCLUIR METEDO MAIN PARA EXECUTAR E CRIAR OS ARQUIVOS DE IMAGENS.
+    
 }
