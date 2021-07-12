@@ -1,6 +1,7 @@
 package sistema.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -70,10 +71,11 @@ public abstract class Mapa implements Serializable{
 		
     	double percentualTotal = 0.0;
     	String resultadoBusca;
-    	Collection<String> ConjuntosPorcentagens = new HashSet<String>();
+    	Simbolo simbolo = new Simbolo(0,null);
+    	Collection<String> ConjuntosPorcentagens = new ArrayList<String>();
     	
     	for(Cor cor : cores) {
-    		Simbolo simbolo = cor.getSimbolo();
+    		simbolo = cor.getSimbolo();
     		double percentualPorCor = getPercentualPixelsEquivalentes(cor);
     		percentualTotal += percentualPorCor;
     		if(percentualPorCor  > 0) {
@@ -82,7 +84,7 @@ public abstract class Mapa implements Serializable{
     		}
     	}
     	if(percentualTotal > 0) {
-    		resultadoBusca = simbolo.getNome() +" : " +percentualTotal+"\n";
+    		resultadoBusca ="TOTAL " + simbolo.getNome() +" : " +percentualTotal+"\n";
     		ConjuntosPorcentagens.add(resultadoBusca);
     	}else {
     		ConjuntosPorcentagens.add("Nenhuma ocorrencia do elemento");

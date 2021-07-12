@@ -24,7 +24,7 @@ public class Sistema implements SistemaLogicaIF{
     	Simbolo simbolo = simboloDAO.findByName(elemento);
     	Collection<Cor> cores = corDAO.findBySimbolo(simbolo);
 		
-    	Collection<String> listaPercentuais = getPercentualPixelsEquivalentes(cores);
+    	Collection<String> listaPercentuais = mapa.getPercentualPixelsEquivalentes(cores);
     	
     	return listaPercentuais;
     }

@@ -16,6 +16,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JFileChooser;
+
+import sistema.model.CaptadorDeImagens;
 import sistema.model.Sistema;
 import sistema.model.SistemaLogicaIF;
 
@@ -62,33 +64,37 @@ public class JSistemaUI extends JFrame implements ActionListener{
 		JPanel jPanelSouth = new JPanel();
 		
 		
-		jPanelCenter.setLayout(new GridLayout(6, 4));
+		jPanelCenter.setLayout(new GridLayout(6, 5));
 		
 		// Montando espaçamento em cima
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
-		
+		jPanelCenter.add(new JPanel());
+
 		// Inclusor do caminho da imagem
 		jPanelCenter.add(new JPanel());
-		jPanelCenter.add(new JLabel("Informe o caminho do arquivo:"));
+		jPanelCenter.add(new JLabel("Informe o arquivo:"));
 		jPanelCenter.add(this.txtCaminho);
 		jPanelCenter.add(btnBrowser);
-		
+		jPanelCenter.add(new JPanel());
+
 		// Montando espaçamento meio
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
-		
+		jPanelCenter.add(new JPanel());
+
 		
 		// Incluindo dropdown elementos
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JLabel("Selecione o tipo de elemento:"));
 		jPanelCenter.add(this.cmbElementos);
 		jPanelCenter.add(new JPanel());
-		
+		jPanelCenter.add(new JPanel());
+
 		// Montando espaçamento final
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
@@ -98,7 +104,9 @@ public class JSistemaUI extends JFrame implements ActionListener{
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
 		jPanelCenter.add(new JPanel());
-		
+		jPanelCenter.add(new JPanel());
+		jPanelCenter.add(new JPanel());
+
 		
 		//Montando o panel na area sul onde vai ancorar o botão
 		jPanelSouth.setLayout(new GridLayout(2, 3));
@@ -157,7 +165,7 @@ public class JSistemaUI extends JFrame implements ActionListener{
 			} catch (Exception exc) {
 				JOptionPane.showMessageDialog(this,
 					    "Erro: " + exc.getMessage(),
-					    "Erro na análise da imagem",
+					    "Erro na an�lise da imagem",
 					    JOptionPane.ERROR_MESSAGE);			
 			}
 			
@@ -165,6 +173,8 @@ public class JSistemaUI extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String[] args) throws Exception {
+		CaptadorDeImagens captador = new CaptadorDeImagens();
+		captador.main(args);
 		(new JSistemaUI()).run();  
 	}
 

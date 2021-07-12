@@ -1,6 +1,5 @@
 package sistema.model.entity;
 
-import sistema.model.convert.ConversorCMYKToRGB;
 import sistema.model.entity.Simbolo;
 
 public class CorRGB extends Cor
@@ -76,8 +75,10 @@ public class CorRGB extends Cor
     	if(no instanceof CorRGB) 
     		return ((this.getRed() == ((CorRGB) no).getRed()) && (this.getGreen() == ((CorRGB) no).getGreen()) && (this.getBlue() == ((CorRGB) no).getBlue()));
     	else {
-    		no = no.geraRGB();
-    		return ((this.getRed() == ((CorRGB) no).getRed()) && (this.getGreen() == ((CorRGB) no).getGreen()) && (this.getBlue() == ((CorRGB) no).getBlue()));
+    		CorRGB corTransformada = no.geraRGB();
+    		return ((this.getRed() == ((CorRGB) corTransformada).getRed()) && 
+    				(this.getGreen() == ((CorRGB) corTransformada).getGreen()) && 
+    				(this.getBlue() == ((CorRGB) corTransformada).getBlue()));
     	}	
     }
     

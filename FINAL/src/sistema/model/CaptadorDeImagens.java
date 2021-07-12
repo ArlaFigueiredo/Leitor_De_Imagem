@@ -8,7 +8,7 @@ import sistema.persistencia.MapaDAOFILE;
 public class CaptadorDeImagens   {
     
 	
-	public CorRGB[][] captaSalvador() throws Exception {
+	public MapaRGB captaSalvador() throws Exception {
 		
 		CorDAOSQL cor = new CorDAOSQL();
         CorRGB [][] imagemSalvador = new CorRGB[5][5];
@@ -31,11 +31,13 @@ public class CaptadorDeImagens   {
         imagemSalvador[3][3] = (CorRGB) cor.findByName("AZUL RIO");
         imagemSalvador[4][3] = (CorRGB) cor.findByName("AZUL MANGUE");
         
-        return imagemSalvador;
+        MapaRGB mapaSalvador = new MapaRGB("001", "SALVADOR", imagemSalvador);
+        
+        return mapaSalvador;
     }
     
     
-    public CorRGB[][] captaCuritiba() throws Exception {
+    public MapaRGB captaCuritiba() throws Exception {
         CorRGB [][] imagemCuritiba = new CorRGB[5][5];
         CorDAOSQL cor = new CorDAOSQL();
         for (int i = 0; i < 5; i++){
@@ -59,11 +61,12 @@ public class CaptadorDeImagens   {
         imagemCuritiba[1][4] = (CorRGB) cor.findByName("ROXO MONUMENTO");
         imagemCuritiba[3][4] = (CorRGB) cor.findByName("ROXO MONUMENTO");
         imagemCuritiba[4][4] = (CorRGB) cor.findByName("VERDE JARDIM");
-
-        return imagemCuritiba;
+        
+        MapaRGB mapaCuritiba = new MapaRGB("002", "CURITIBA", imagemCuritiba);
+        return mapaCuritiba;
     }
     
-    public CorRGB[][] captaBrasilia() throws Exception {
+    public MapaRGB captaBrasilia() throws Exception {
         
         CorRGB [][] imagemBrasilia = new CorRGB[5][5];
         CorDAOSQL cor = new CorDAOSQL();
@@ -89,12 +92,13 @@ public class CaptadorDeImagens   {
         imagemBrasilia[2][3] = (CorRGB) cor.findByName("MARROM EDIFICIOS");
         imagemBrasilia[4][3] = (CorRGB) cor.findByName("MARROM EDIFICIOS");
         
-        return imagemBrasilia;
+        MapaRGB mapaBrasilia = new MapaRGB("003", "BRASILIA", imagemBrasilia);
+        return mapaBrasilia;
     }
     
     
     
-    public CorCMYK[][] captaManaus() throws Exception{
+    public MapaCMYK captaManaus() throws Exception{
         CorCMYK[][] imagemManaus = new CorCMYK[5][5];
         CorDAOSQL cor = new CorDAOSQL();
         
@@ -118,15 +122,16 @@ public class CaptadorDeImagens   {
         imagemManaus[0][1] = (CorCMYK) cor.findByName("AZUL LAGO");
         imagemManaus[3][1] = (CorCMYK) cor.findByName("AZUL LAGO");
         imagemManaus[4][1] = (CorCMYK) cor.findByName("AZUL LAGO");
-        imagemManaus[0][3] = (CorCMYK) cor.findByName("VERMELHO ISOLAMENTO");
-        imagemManaus[3][3] = (CorCMYK) cor.findByName("VERMELHO ISOLAMENTO");
+        imagemManaus[0][3] = (CorCMYK) cor.findByName("VERMELHO");
+        imagemManaus[3][3] = (CorCMYK) cor.findByName("VERMELHO");
         imagemManaus[4][3] = (CorCMYK) cor.findByName("CINZA PONTE");
         
-        return imagemManaus;
+        MapaCMYK mapaManaus = new MapaCMYK("004", "MANAUS", imagemManaus);
+        return mapaManaus;
     }
     
     
-    public CorCMYK[][] captaBelem() throws Exception{
+    public MapaCMYK captaBelem() throws Exception{
         CorCMYK[][] imagemBelem = new CorCMYK[5][5];
         CorDAOSQL cor = new CorDAOSQL();
         for (int i = 0; i < 5; i++){
@@ -155,11 +160,12 @@ public class CaptadorDeImagens   {
         
         imagemBelem[4][2] =(CorCMYK) cor.findByName("MARROM CASA");
         
-        return imagemBelem;
+        MapaCMYK mapaBelem = new MapaCMYK("002", "BELEM", imagemBelem);
+        return mapaBelem;
     }
     
     
-    public CorCMYK[][] captaFortaleza() throws Exception{
+    public MapaCMYK captaFortaleza() throws Exception{
     	CorDAOSQL cor = new CorDAOSQL();
         CorCMYK[][] imagemFortaleza = new CorCMYK[5][5];
         
@@ -190,14 +196,17 @@ public class CaptadorDeImagens   {
         imagemFortaleza[0][0] = (CorCMYK) cor.findByName("VERDE PARQUE");
         imagemFortaleza[0][0] = (CorCMYK) cor.findByName("VERDE PARQUE");
         
-        return imagemFortaleza;
+        MapaCMYK mapaFortaleza = new MapaCMYK("002", "BELEM", imagemFortaleza);
+        return mapaFortaleza;
     }
     
     public static void main(String[] args) throws Exception {
 		
     	MapaDAOFILE mDAO = new MapaDAOFILE();
-    	mDAO.salvar();
-		
+    	CaptadorDeImagens captador = new CaptadorDeImagens();
+    	
+    	mDAO.salvar(captador.captaSalvador());
+    	mDAO.salvar(captador.captaManaus());
 	}
     
 }
