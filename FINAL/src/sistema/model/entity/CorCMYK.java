@@ -50,7 +50,6 @@ public class CorCMYK extends Cor
         this.cyan = verificaCMYK(cyan);
     }  
 
-
     private void setMagenta(int magenta){
         this.magenta = verificaCMYK(magenta);
     }
@@ -62,7 +61,6 @@ public class CorCMYK extends Cor
     private void setKey(int key){
         this.key = verificaCMYK(key);
     }
-
 
     public int getLuminosidade(){
         return  (int)((this.getKey() * 255) / 100);
@@ -78,12 +76,8 @@ public class CorCMYK extends Cor
     
     public boolean equals(Cor cor){
     	
-    	if(cor instanceof CorRGB) {
-    		CorRGB corRgb = this.geraRGB();
-    		return corRgb.equals(cor);
-    	}
-    	else 
-    		return ((this.getCyan() ==((CorCMYK) cor).getCyan()) && (this.getMagenta() == ((CorCMYK) cor).getMagenta()) && (this.getYellow() == ((CorCMYK) cor).getYellow()) && (this.getKey() == ((CorCMYK) cor).getKey()));
+    	CorRGB corRgb = this.geraRGB();
+		return corRgb.equals(cor);
 	}
     
     public CorRGB geraRGB(){

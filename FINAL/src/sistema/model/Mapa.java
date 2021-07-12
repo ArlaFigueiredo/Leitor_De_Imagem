@@ -10,9 +10,6 @@ import sistema.model.entity.Simbolo;
 
 public abstract class Mapa implements Serializable{
     
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String id;
     private String descricao;
@@ -20,7 +17,7 @@ public abstract class Mapa implements Serializable{
     public Mapa(String id, String descricao){
         this.id = id;
         this.descricao = descricao;
-    }; 
+    }
     
     public abstract Cor getPixel(int posicao_altura, int posicao_largura); 
     public abstract void setPixel(int posicao_altura, int posicao_largura, Cor pixel);
@@ -73,11 +70,10 @@ public abstract class Mapa implements Serializable{
 		
     	double percentualTotal = 0.0;
     	String resultadoBusca;
-    	Simbolo simbolo = new Simbolo(0, null);
     	Collection<String> ConjuntosPorcentagens = new HashSet<String>();
     	
     	for(Cor cor : cores) {
-    		simbolo = cor.getSimbolo();
+    		Simbolo simbolo = cor.getSimbolo();
     		double percentualPorCor = getPercentualPixelsEquivalentes(cor);
     		percentualTotal += percentualPorCor;
     		if(percentualPorCor  > 0) {
@@ -94,9 +90,6 @@ public abstract class Mapa implements Serializable{
     	
     	return ConjuntosPorcentagens;
     }
-    //TODO: ANALISAR POSSIBILIDADE DE CRIAR CLASSE PARA EXIBIR O RESULTADO. 
-    // Class PercentualCor:  nome, percentual.
-    
 
     public String toString(){
         return "Mapa [" + this.getId() + "] " + this.getDescricao() + " - Formato *" + this.getCodTipo();

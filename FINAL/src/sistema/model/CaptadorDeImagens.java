@@ -3,6 +3,8 @@ package sistema.model;
 import sistema.model.entity.CorCMYK;
 import sistema.model.entity.CorRGB;
 import sistema.persistencia.CorDAOSQL;
+import sistema.persistencia.MapaDAOFILE;
+
 public class CaptadorDeImagens   {
     
 	
@@ -191,6 +193,11 @@ public class CaptadorDeImagens   {
         return imagemFortaleza;
     }
     
-    //TODO: INCLUIR METEDO MAIN PARA EXECUTAR E CRIAR OS ARQUIVOS DE IMAGENS.
+    public static void main(String[] args) throws Exception {
+		
+    	MapaDAOFILE mDAO = new MapaDAOFILE();
+    	mDAO.salvar();
+		
+	}
     
 }

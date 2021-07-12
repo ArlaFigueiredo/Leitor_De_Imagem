@@ -43,10 +43,6 @@ public abstract class Cor implements Serializable{
 	   return this.nome; 
    }
     
-    public int getSimilaridade(Cor outro){
-        return (int)(Math.abs(this.getLuminosidade() - outro.getLuminosidade()));
-    }
-    
     public String toString() {
     	return "[" + this.getId() + "] " + this.getNome();
     }

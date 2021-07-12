@@ -11,11 +11,6 @@ public class MapaRGB extends Mapa
         super(id, descricao);
         this.imagem = imagem;
     } 
-
-    public MapaRGB(String id, String descricao, int altura, int largura){
-        super(id, descricao);
-        this.imagem = new CorRGB[altura][largura];
-    }
     
     public Cor[][] getImagem(){
         return this.imagem;

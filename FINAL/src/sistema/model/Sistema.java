@@ -24,11 +24,9 @@ public class Sistema implements SistemaLogicaIF{
     	Simbolo simbolo = simboloDAO.findByName(elemento);
     	Collection<Cor> cores = corDAO.findBySimbolo(simbolo);
 		
+    	Collection<String> listaPercentuais = getPercentualPixelsEquivalentes(cores);
     	
-    	return null;
-    	
-    	//TODO incluir metodo que retorna a collection de strings com percentual.
-    
+    	return listaPercentuais;
     }
     
     public Collection<String> getElementos() throws Exception{

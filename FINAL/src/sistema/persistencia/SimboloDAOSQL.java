@@ -59,8 +59,8 @@ public class SimboloDAOSQL extends ConnectionDB implements SimboloDAOIF{
 		PreparedStatement pStmt = this.getConn().prepareStatement(SIMBOLO_SELECT_BY_NAME);
 		pStmt.setString(1, nome);
 		ResultSet rSet = pStmt.executeQuery();
-		//if(!rSet.next())
-			//throw new SimboloInexistenteException(id);
+		if(!rSet.next())
+			throw new SimboloInexistenteException(nome);
 		
 		int id = rSet.getInt("id");
 		String sNome = rSet.getString("nome");
