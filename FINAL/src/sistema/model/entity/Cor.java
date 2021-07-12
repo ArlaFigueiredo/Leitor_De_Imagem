@@ -5,7 +5,6 @@ import sistema.model.entity.Simbolo;
 
 public abstract class Cor implements Serializable{
  
-	private static final long serialVersionUID = 1L;
 	private String id;
 	private Simbolo simbolo;
 	private String nome;
@@ -18,6 +17,7 @@ public abstract class Cor implements Serializable{
 	
     public abstract int getLuminosidade();
     public abstract boolean equals(Cor cor);
+    public abstract CorRGB geraRGB();
     
     private void setId(String id){ 
     	this.id = id; 
@@ -45,10 +45,10 @@ public abstract class Cor implements Serializable{
     
     public int getSimilaridade(Cor outro){
         return (int)(Math.abs(this.getLuminosidade() - outro.getLuminosidade()));
-    };
+    }
     
     public String toString() {
-  		return this.getNome();
+    	return "[" + this.getId() + "] " + this.getNome();
     }
     
 }

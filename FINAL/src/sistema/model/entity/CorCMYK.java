@@ -2,7 +2,7 @@ package sistema.model.entity;
 
 import sistema.model.entity.Simbolo;
 
-public class CorCMYK extends Cor implements ConversorToRGB
+public class CorCMYK extends Cor
 {  
     private int cyan;
     private int magenta;
@@ -78,13 +78,15 @@ public class CorCMYK extends Cor implements ConversorToRGB
     
     public boolean equals(Cor cor){
     	
-    	if(cor instanceof CorRGB)
-    		return false;
+    	if(cor instanceof CorRGB) {
+    		CorRGB corRgb = this.geraRGB();
+    		return corRgb.equals(cor);
+    	}
     	else 
     		return ((this.getCyan() ==((CorCMYK) cor).getCyan()) && (this.getMagenta() == ((CorCMYK) cor).getMagenta()) && (this.getYellow() == ((CorCMYK) cor).getYellow()) && (this.getKey() == ((CorCMYK) cor).getKey()));
 	}
     
-    public CorRGB converterToRGB(){
+    public CorRGB geraRGB(){
      
         CorRGB pixel = new CorRGB(this.getId(),this.getSimbolo(), this.getNome(),
                                 (int)(255 * (1 - ((double)this.getCyan()/100)) *  (1-((double)this.getKey()/100))), 

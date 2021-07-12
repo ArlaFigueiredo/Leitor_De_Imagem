@@ -67,14 +67,18 @@ public class CorRGB extends Cor
         return num;
     }
     
+    public CorRGB geraRGB() {
+    	CorRGB pixel = new CorRGB(this.getId(),this.getSimbolo(), this.getNome(), this.getRed(), this.getGreen(), this.getBlue());
+		return pixel;
+    }
+    
     public boolean equals(Cor no){
-    	ConversorCMYKToRGB conversor = new ConversorCMYKToRGB();
-    	if(no instanceof CorCMYK) {
-    		no = conversor.converter(no);
+    	if(no instanceof CorRGB) 
     		return ((this.getRed() == ((CorRGB) no).getRed()) && (this.getGreen() == ((CorRGB) no).getGreen()) && (this.getBlue() == ((CorRGB) no).getBlue()));
-    	}
-    	else
+    	else {
+    		no = no.geraRGB();
     		return ((this.getRed() == ((CorRGB) no).getRed()) && (this.getGreen() == ((CorRGB) no).getGreen()) && (this.getBlue() == ((CorRGB) no).getBlue()));
+    	}	
     }
     
 }
